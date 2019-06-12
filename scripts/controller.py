@@ -27,9 +27,9 @@ class PS(object):
         self.pub[topic_name].publish(msg)
         return
 
-    def set_publisher(self, topic_name, data_class, latch = True, queue_size):
+    def set_publisher(self, topic_name, data_class, queue_size, latch = True):
         if topic_name not in self.pub:
-            rospy.Publisher(name = topic_name, data_class = data_class, latch = latch, queue_size =queue_size)
+            rospy.Publisher(name = topic_name, data_class = data_class, queue_size =queue_size, latch = latch)
             time.sleep(0.01)
         else:
             pass
@@ -44,7 +44,7 @@ class SIS(object):
     def sis_vp(self):
         name = '/necst_sisrx/sis/vp_cmd'
 
-        self.ps.set_publisher(topic_name = name, data_class = std_msgs.msg.Float64, latch = True, queue_size = 1)
+        self.ps.set_publisher(topic_name = name, data_class = std_msgs.msg.Float64, queue_size = 1, latch = True)
 
         self.ps.publish(topic_name = name, msg = command)
         return
