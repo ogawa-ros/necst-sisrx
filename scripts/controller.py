@@ -46,6 +46,6 @@ class SIS(object):
         topic_name = '/necst_sisrx/sis/vp_cmd'
 
         self.ps.set_publisher(topic_name = topic_name, data_class = std_msgs.msg.Float64, queue_size = 1, latch = True)
-
-        self.ps.publish(topic_name = topic_name, msg = command)
-        return
+        while True:
+            self.ps.publish(topic_name = topic_name, msg = command)
+    return
