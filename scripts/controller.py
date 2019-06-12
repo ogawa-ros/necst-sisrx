@@ -20,7 +20,7 @@ class PS(object):
 
 
     def __init__(self):
-        pub = {}
+        self.pub = {}
         pass
 
     def publish(self, topic_name, msg):
