@@ -20,6 +20,7 @@ class PS(object):
 
 
     def __init__(self):
+        rospy.init_node(name)
         self.pub = {}
         pass
 
@@ -48,8 +49,3 @@ class SIS(object):
 
         self.ps.publish(topic_name = topic_name, msg = command)
         return
-
-
-if __name__ == "__main__":
-    rospy.init_node(name)
-    rospy.spin()
