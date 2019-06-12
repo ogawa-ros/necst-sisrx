@@ -41,7 +41,7 @@ class SIS(object):
     def __init__(self):
         self.ps = PS()
 
-    def sis_vp(self):
+    def sis_vp(self, command):
         name = '/necst_sisrx/sis/vp_cmd'
 
         self.ps.set_publisher(topic_name = name, data_class = std_msgs.msg.Float64, queue_size = 1, latch = True)
