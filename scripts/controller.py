@@ -50,6 +50,6 @@ class SIS(object):
         return
 
 
-if __name__ = '__main__':
+if __name__ == '__main__':
     rospy.init_node(name)
     rospy.spin()
