@@ -18,9 +18,9 @@ class controller(object):
 
 class PS(object):
 
-    pub = {}
 
     def __init__(self):
+        pub = {}
         pass
 
     def publish(self, topic_name, msg):
