@@ -18,9 +18,8 @@ class controller(object):
 
 class PS(object):
 
-
     def __init__(self):
-        rospy.init_node(name)
+
         self.pub = {}
         pass
 
@@ -40,6 +39,7 @@ class PS(object):
 class SIS(object):
 
     def __init__(self):
+        rospy.init_node(name)
         self.ps = PS()
 
     def sis_vp(self, command):
