@@ -13,6 +13,9 @@ class controller(object):
     def __init__(self):
         self.ps = PS()
         self.sis = SIS()
+        self.irrsg = IRRSG()
+        self.lo1st = LO1ST()
+        self.loatt = LOATT()
 
 
 
@@ -46,6 +49,30 @@ class SIS(object):
         topic_name = '/necst_sisrx/sis/vp_cmd'
 
         self.ps.set_publisher(topic_name = topic_name, data_class = std_msgs.msg.Float64, queue_size = 1, latch = True)
-        e
+
         self.ps.publish(topic_name = topic_name, msg = command)
         return
+
+
+class IRRSG(object):
+
+    def __init__(self):
+        rospy.init_node(name)
+        self.ps = PS()
+
+    def irrsg_f(self, command):
+        topic_name = '/necst_sisrx/irrsg/f_cmd'
+
+        self.ps.set_publisher(topic_name = topic_name, data_class = std_msgs.msg.Float64, queue_size = 1, latch = True)
+
+        self.ps.publish(topic_name = topic_name, msg = command)
+
+    def irrsg_p(self, command):
+        topic_name = '/necst_sisrx/irrsg/p_cmd'
+
+        self.ps.set_publisher(topic_name = topic_name, data_class = std_msgs.msg.Float64, queue_size = 1, latch = True)
+
+        self.ps.publish(topic_name = topic_name, msg = command)
+
+
+class 
