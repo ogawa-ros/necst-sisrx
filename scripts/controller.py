@@ -75,4 +75,37 @@ class IRRSG(object):
         self.ps.publish(topic_name = topic_name, msg = command)
 
 
-class 
+class LO1ST(objent):
+
+    def __init__(self):
+        rospy.init_node(name)
+        self.ps = PS()
+
+    def lo1st_f(self, command):
+        topic_name = '/necst_sisrx/lo1st/f_cmd'
+
+        self.ps.set_publisher(topic_name = topic_name, data_class = std_msgs.msg.Float64, queue_size = 1, latch = True)
+
+        self.ps.publish(topic_name = topic_name, msg = command)
+
+    def lo1st_p(self, command):
+        topic_name = '/necst_sisrx/lo1st/p_cmd'
+
+        self.ps.set_publisher(topic_name = topic_name, data_class = std_msgs.msg.Float64, queue_size = 1, latch = True)
+
+        self.ps.publish(topic_name = topic_name, msg = command)
+
+
+class LOATT(object):
+
+    def __init__(self):
+        rospy.init_node(name)
+        self.ps = PS()
+
+    def loatt_v(self, command):
+        topic_name = '/necst_sisrx/loatt/v_cmd'
+
+        self.ps.set_publisher(topic_name = topic_name, data_class = std_msgs.msg.Float64, queue_size = 1, latch = True)
+
+        self.ps.publish(topic_name = topic_name, msg = command)
+    
