@@ -75,7 +75,7 @@ class IRRSG(object):
         self.ps.publish(topic_name = topic_name, msg = command)
 
 
-class LO1ST(objent):
+class LO1ST(object):
 
     def __init__(self):
         rospy.init_node(name)
@@ -108,4 +108,3 @@ class LOATT(object):
         self.ps.set_publisher(topic_name = topic_name, data_class = std_msgs.msg.Float64, queue_size = 1, latch = True)
 
         self.ps.publish(topic_name = topic_name, msg = command)
-    
