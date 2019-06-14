@@ -28,7 +28,7 @@ class make_pub(object):
     def publish(self, topic_name, data_class, msg):
         if self.pub[topic_name]:
             self.pub[topic_name].publish(msg)
-            
+
         else:
             self.set_publisher(topic_name = topic_nema, data_class = data_class)
             self.pub[topic_name].publish(msg)
@@ -47,7 +47,7 @@ class sis(object):
 
     def __init__(self):
         rospy.init_node(name)
-        self.ps = PS()
+        self.ps = make_pub()
 
     def set_sis_vp(self, command):
         topic_name = '/necst_sisrx/sis/vp_cmd'
@@ -61,7 +61,7 @@ class irrsg(object):
 
     def __init__(self):
         rospy.init_node(name)
-        self.ps = PS()
+        self.ps = make_pub()
 
     def set_irrsg_freq(self, command):
         topic_name = '/necst_sisrx/irrsg/f_cmd'
@@ -80,7 +80,7 @@ class lo1st(object):
 
     def __init__(self):
         rospy.init_node(name)
-        self.ps = PS()
+        self.ps = make_pub()
 
     def set_lo1st_freq(self, command):
         topic_name = '/necst_sisrx/lo1st/f_cmd'
@@ -99,7 +99,7 @@ class loatt(object):
 
     def __init__(self):
         rospy.init_node(name)
-        self.ps = PS()
+        self.ps = make_pub()
 
     def set_loatt_vol(self, command):
         topic_name = '/necst_sisrx/loatt/v_cmd'
