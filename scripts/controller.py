@@ -30,7 +30,7 @@ class make_pub(object):
             self.pub[topic_name].publish(msg)
 
         else:
-            self.set_publisher(name = topic_nema, data_class = data_class)
+            self.set_publisher(topic_name = topic_name, data_class = data_class)
             self.pub[topic_name].publish(msg)
         return
 
