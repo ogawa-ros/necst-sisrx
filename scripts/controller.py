@@ -28,6 +28,7 @@ class make_pub(object):
     def publish(self, topic_name, data_class, msg):
         if self.pub[topic_name]:
             self.pub[topic_name].publish(msg)
+            
         else:
             self.set_publisher(topic_name = topic_nema, data_class = data_class)
             self.pub[topic_name].publish(msg)
