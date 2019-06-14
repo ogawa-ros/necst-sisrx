@@ -26,7 +26,7 @@ class make_pub(object):
         pass
 
     def publish(self, topic_name, data_class, msg):
-        if self.pub[topic_name]:
+        if self.pub[topic_name] is self.pub:
             self.pub[topic_name].publish(msg)
 
         else:
