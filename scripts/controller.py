@@ -45,7 +45,7 @@ class make_pub(object):
 class sis(object):
 
     def __init__(self):
-        self.ps = make_pub()
+        self.make_pub = make_pub()
 
     def set_sis_vp(self, command):
         topic_name = '/necst_sisrx/sis/vp_cmd'
@@ -58,7 +58,7 @@ class sis(object):
 class irrsg(object):
 
     def __init__(self):
-        self.ps = make_pub()
+        self.make_pub = make_pub()
 
     def set_irrsg_freq(self, command):
         topic_name = '/necst_sisrx/irrsg/f_cmd'
@@ -76,7 +76,7 @@ class irrsg(object):
 class lo1st(object):
 
     def __init__(self):
-        self.ps = make_pub()
+        self.make_pub = make_pub()
 
     def set_lo1st_freq(self, command):
         topic_name = '/necst_sisrx/lo1st/f_cmd'
@@ -94,7 +94,7 @@ class lo1st(object):
 class loatt(object):
 
     def __init__(self):
-        self.ps = make_pub()
+        self.make_pub = make_pub()
 
     def set_loatt_vol(self, command):
         topic_name = '/necst_sisrx/loatt/v_cmd'
