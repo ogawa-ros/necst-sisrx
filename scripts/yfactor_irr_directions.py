@@ -27,9 +27,16 @@ loatt.set_loatt_vol(att_vol)
 logger.logger(iv)
 
 sis.set_sis_vp(volp)
-logger.logger(yfactor)     #have to repeat until determining optimal voltage value
+logger.logger(hot)
+logger.logger(cold)     #have to repeat until determining optimal voltage value
 
 loatt.set_loatt_vol(att_vol)   #necessary anather loatt_vol?
-logger.logger(yfactor)     #have to repeat until determining optimal att voltage value
+logger.logger(hot)
+logger.logger(cold)     #have to repeat until determining optimal att voltage value
 
-logger.logger(irr)
+irrsg.set_irrsg_freq(irr_freq_low)
+irrsg.set_irrsg_power(irr_power_low)
+logger.logger(irr_low)
+irrsg.set_irrsg_freq(irr_freq_up)
+irrsg.set_irrsg_power(irr_power_up)
+logger.logger(irr_up)
