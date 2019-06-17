@@ -64,12 +64,14 @@ class irrsg(object):
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
+        return
 
     def set_irrsg_power(self, command):
         topic_name = '/necst_sisrx/irrsg/p_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
+        return
 
 
 class lo1st(object):
@@ -82,12 +84,14 @@ class lo1st(object):
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
+        return
 
     def set_lo1st_power(self, command):
         topic_name = '/necst_sisrx/lo1st/p_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
+        return
 
 
 class loatt(object):
@@ -100,3 +104,4 @@ class loatt(object):
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
+        return
