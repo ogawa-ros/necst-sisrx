@@ -45,7 +45,6 @@ class make_pub(object):
 class sis(object):
 
     def __init__(self):
-        rospy.init_node(name)
         self.ps = make_pub()
 
     def set_sis_vp(self, command):
@@ -59,7 +58,6 @@ class sis(object):
 class irrsg(object):
 
     def __init__(self):
-        rospy.init_node(name)
         self.ps = make_pub()
 
     def set_irrsg_freq(self, command):
@@ -78,7 +76,6 @@ class irrsg(object):
 class lo1st(object):
 
     def __init__(self):
-        rospy.init_node(name)
         self.ps = make_pub()
 
     def set_lo1st_freq(self, command):
@@ -97,7 +94,6 @@ class lo1st(object):
 class loatt(object):
 
     def __init__(self):
-        rospy.init_node(name)
         self.ps = make_pub()
 
     def set_loatt_vol(self, command):
