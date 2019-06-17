@@ -51,7 +51,7 @@ class sis(object):
         topic_name = '/necst_sisrx/sis/vp_cmd'
         data_class = std_msgs.msg.Float64
 
-        self.ps.publish(topic_name, data_class, msg = command )
+        self.make_pub.publish(topic_name, data_class, msg = command )
         return
 
 
@@ -64,13 +64,13 @@ class irrsg(object):
         topic_name = '/necst_sisrx/irrsg/f_cmd'
         data_class = std_msgs.msg.Float64
 
-        self.ps.publish(topic_name, data_class, msg = command)
+        self.make_pub.publish(topic_name, data_class, msg = command)
 
     def set_irrsg_power(self, command):
         topic_name = '/necst_sisrx/irrsg/p_cmd'
         data_class = std_msgs.msg.Float64
 
-        self.ps.publish(topic_name, data_class, msg = command)
+        self.make_pub.publish(topic_name, data_class, msg = command)
 
 
 class lo1st(object):
@@ -82,13 +82,13 @@ class lo1st(object):
         topic_name = '/necst_sisrx/lo1st/f_cmd'
         data_class = std_msgs.msg.Float64
 
-        self.ps.publish(topic_name, data_class, msg = command)
+        self.make_pub.publish(topic_name, data_class, msg = command)
 
     def set_lo1st_power(self, command):
         topic_name = '/necst_sisrx/lo1st/p_cmd'
         data_class = std_msgs.msg.Float64
 
-        self.ps.publish(topic_name, data_class, msg = command)
+        self.make_pub.publish(topic_name, data_class, msg = command)
 
 
 class loatt(object):
@@ -100,4 +100,4 @@ class loatt(object):
         topic_name = '/necst_sisrx/loatt/v_cmd'
         data_class = std_msgs.msg.Float64
 
-        self.ps.publish(topic_name, data_class, msg = command)
+        self.make_pub.publish(topic_name, data_class, msg = command)
