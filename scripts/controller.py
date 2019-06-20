@@ -50,7 +50,14 @@ class sis(object):
         topic_name = '/necst_sisrx/sis/vp_cmd'
         data_class = std_msgs.msg.Float64
 
-        self.make_pub.publish(topic_name, data_class, msg = command )
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
+    def set_sis_vgap(self):
+        topic_name = '/necst_sisrx/sis/vgap_cmd'
+        data_class = std_msgs.msg.Float64
+
+        self.make_pub.publish(topic_name, data_class, mag = command)
         return
 
 
