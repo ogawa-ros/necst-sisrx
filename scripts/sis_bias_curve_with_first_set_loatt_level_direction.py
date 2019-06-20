@@ -22,7 +22,7 @@ power = input("1st Lo power: ")
 lo.set_lo1st_freq(freq)
 lo.set_lo1st_power(power)
 
-sis.set_sis_vp()      #before ditermine vp
+sis.set_sis_vp()      #before ditermine vp with Ueda
 att = [0:20]
 logger.start(iv_band)     #search Lo Att value when Parameter Search
 for att_vol in att:
