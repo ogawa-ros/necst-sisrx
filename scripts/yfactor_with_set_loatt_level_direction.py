@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-name = 'set_sis_vol_direction'
+name = 'set_loatt_level_direction'
 
 import rospy
 import time
@@ -14,14 +14,15 @@ import tz2019_controller
 rospy.init_node(name)
 
 sis = controller.sis()
+irrsg = controller.irrsg()
 loatt = controller.loatt()
 logger = core_controller.logger()
 switch = tz2019_controller.switch()
 
-volp = input("SIS vol: ")    #have to repeat until determining optimal voltage value
-sis.set_sis_vp(volp)
+att_vol = input("Lo Att vol: ")    #have to repeat until determining optimal att voltage value
+loatt.set_loatt_vol(att_vol)
 bands = {'hu':, 'hl':, 'vu':, 'vl':}
-for band in bands:              #x4 repeat hu,hl,vu,vl
+for band in bands:             #x4 repeat hu,hl,vu,vl
     switch_value = band
     switch.set_if_switch(switch_value)
     input("Are you ready for hot measure?: ")
