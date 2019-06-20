@@ -18,8 +18,8 @@ lo = controller.lo1st()
 loatt = controller.loatt()
 logger = core_controller.logger()
 
-att = numpy.array([0:20])          #search Lo Att value when Parameter Search
-logger.start(iv_band)
+att = numpy.arange(21)          #search Lo Att value when Parameter Search
+logger.start(iv)           #tolk with logger team
 for att_vol in att:
     loatt.set_loatt_vol(att_vol)
     sis = numpy.array([])               #before ditermine vp with Ueda
