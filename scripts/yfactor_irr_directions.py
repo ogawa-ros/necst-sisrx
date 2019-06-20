@@ -25,17 +25,14 @@ power = input("1st Lo power: ")
 lo.set_lo1st_freq(freq)
 lo.set_lo1st_power(power)
 
-while question is not 'OK':
-    att_vol = input("Lo Att vol: ")     #search Lo Att value when Parameter Search
-    sis.set_sis_vp(0)
-    loatt.set_loatt_vol(att_vol)
-    bands = {'hu':, 'hl':, 'vu':, 'vl':}
-    for band in bands:                  #x4 repeat hu,hl,vu,vl
-        switch_value = band
-        switch.set_if_switch(switch_value)
-        logger.start(iv_band)
+while question is not 'OK':     #search Lo Att value when Parameter Search
+    sis.set_sis_vp()      #before ditermine vp
+    att = [0:20]
+    logger.start(iv_band)
+    for att_vol in att: 
+        loatt.set_loatt_vol(att_vol)                 #x4 repeat hu,hl,vu,vl
         time.sleep()
-        logger.stop()
+    logger.stop()
     question = input("Are you OK or NOT?: ")
 
 while question is not 'OK':
