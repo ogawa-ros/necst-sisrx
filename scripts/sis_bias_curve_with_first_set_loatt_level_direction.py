@@ -5,6 +5,7 @@ name = 'sis_bias_curve_direction'
 import rospy
 import time
 import std_msgs.msg
+import numpy
 
 import controller
 import core_controller
@@ -17,15 +18,14 @@ lo = controller.lo1st()
 loatt = controller.loatt()
 logger = core_controller.logger()
 
-freq = input("1st Lo freq: ")       #set Lo SG value
-power = input("1st Lo power: ")
-lo.set_lo1st_freq(freq)
-lo.set_lo1st_power(power)
-
-sis.set_sis_vp()      #before ditermine vp with Ueda
-att = [0:20]
-logger.start(iv_band)     #search Lo Att value when Parameter Search
+att = numpy.array([0:20])          #search Lo Att value when Parameter Search
+logger.start(iv_band)
 for att_vol in att:
     loatt.set_loatt_vol(att_vol)
-    time.sleep(0.1)
+    sis = numpy.array([])               #before ditermine vp with Ueda
+    for sis_vol in sis:
+        sis.set_sis_vp(sis_vol)
+        time.sleep(0.1)
+        continue
+    continue
 logger.stop()
