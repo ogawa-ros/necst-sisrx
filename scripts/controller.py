@@ -18,7 +18,7 @@ class controller(object):
 
 
 
-class make_pub(object):
+class make_pub(object):      #make publiher and publish of model
 
     def __init__(self):
 
