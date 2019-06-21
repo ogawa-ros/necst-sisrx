@@ -5,7 +5,8 @@ name = 'set_sis_vol_direction'
 import rospy
 import time
 import std_msgs.msg
-import numpy
+import numpy as np
+import argparse
 
 import controller
 import core_controller
@@ -18,17 +19,18 @@ loatt = controller.loatt()
 logger = core_controller.logger()
 switch = tz2019_controller.switch()
 
-volp = input("SIS vol: ")    #have to repeat until determining optimal voltage value
-sis.set_sis_vp(volp)
-bands = {'hu':, 'hl':, 'vu':, 'vl':}
-for band in bands:              #x4 repeat hu,hl,vu,vl
-    switch_value = band
-    switch.set_if_switch(switch_value)
-    input("Are you ready for hot measure?: ")
-    logger.start(hot_band)
-    time.sleep(0.1)
-    logger.stop()
-    input("Are you ready for cold measure?: ")
-    logger.start(cold_band)
-    time.sleep(0.1)
-    logger.stop()
+volp1 = np.linespace(-1, 0, 5)   #have to repeat until determining optimal voltage value
+volp2 = np.linespace(-1, 0, 5)
+switch.set_if_switch(switch_value)
+logger.start(yfactor)
+for vp1 in volp1:
+    sis.set_sis_vp(vp1)
+    for vp2 in volp2:
+        sis.set_sis_vp(vp2)
+        time.sleep(0.1)
+input("Are you ready for cold measure: ")
+for vp1 in volp1:
+    sis.set_sis_vp(vp1)
+    for vp2 in volp2:
+        sis.set_sis_vp(vp2)
+logger.stop()
