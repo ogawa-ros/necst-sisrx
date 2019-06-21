@@ -19,7 +19,13 @@ loatt = controller.loatt()
 logger = core_controller.logger()
 switch = tz2019_controller.switch()
 
-volp1 = np.linespace(-1, 0, 5)   #have to repeat until determining optimal voltage value
+parser = argparse.ArgumentParser(description = 'search optical sis voltage value')
+
+parser.add_argument('switch_value', choices = ['hu', 'hl', 'vu', 'vl'], type = float, help = 'choice IF output port')
+
+args = parser.parse_args()
+
+volp1 = np.linespace(-1, 0, 5)   #search optimal voltage value
 volp2 = np.linespace(-1, 0, 5)
 switch.set_if_switch(switch_value)
 logger.start(yfactor)
@@ -28,9 +34,10 @@ for vp1 in volp1:
     for vp2 in volp2:
         sis.set_sis_vp(vp2)
         time.sleep(0.1)
-input("Are you ready for cold measure: ")
+time.sleep(10)
 for vp1 in volp1:
     sis.set_sis_vp(vp1)
     for vp2 in volp2:
         sis.set_sis_vp(vp2)
+        time.sleep(0.1)
 logger.stop()
