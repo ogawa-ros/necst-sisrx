@@ -22,10 +22,9 @@ att = numpy.arange(21)          #search Lo Att value when Parameter Search
 logger.start(iv)           #tolk with logger team
 for att_vol in att:
     loatt.set_loatt_vol(att_vol)
-    sis = numpy.arange(1, 100)
+    sis = numpy.arange(0, 1.2, 0.01)
     for sis_vgap in sis:
-        sis_vgapcount = (sis_vgap)/84
-        sis.set_sis_vgap(sis_vgapcount)
+        sis.set_sis_vgap(sis_vgap)
         time.sleep(0.1)
         continue
     continue
