@@ -6,6 +6,7 @@ import rospy
 import time
 import std_msgs.msg
 import numpy
+import argparse
 
 import controller
 import core_controller
@@ -19,17 +20,19 @@ loatt = controller.loatt()
 logger = core_controller.logger()
 switch = tz2019_controller.switch()
 
-att_vol = input("Lo Att vol: ")    #have to repeat until determining optimal att voltage value
-loatt.set_loatt_vol(att_vol)
-bands = {'hu':, 'hl':, 'vu':, 'vl':}
-for band in bands:             #x4 repeat hu,hl,vu,vl
-    switch_value = band
-    switch.set_if_switch(switch_value)
-    input("Are you ready for hot measure?: ")
-    logger.start(hot_band)
+parser = argparse.ArgumentParser(description = 'search optical Lo Att voltage value')
+
+parser.add_argument('switch_value', choices = ['hu', 'hl', 'vu', 'vl'], type = float, help = 'choice IF output port')
+
+args = parser.parse_args()
+
+att_vol = np.arange(21)    #have to repeat until determining optimal att voltage value
+switch.set_if_switch(switch_value)
+logger.start(yfactor)
+for att_v in att_vol:
+    loatt.set_loatt_vol(vp1)
     time.sleep(0.1)
-    logger.stop()
-    input("Are you ready for cold measure?: ")
-    logger.start(cold_band)
+for att_v in att_vol:
+    loatt.set_loatt_vol(vp1)
     time.sleep(0.1)
-    logger.stop()
+logger.stop()
