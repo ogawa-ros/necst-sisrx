@@ -32,8 +32,10 @@ logger.start(yfactor)
 for att_v in att_vol:
     loatt.set_loatt_vol(vp1)
     time.sleep(0.1)
+    continue
 time.sleep(10)
 for att_v in att_vol:
     loatt.set_loatt_vol(vp1)
     time.sleep(0.1)
+    continue
 logger.stop()
