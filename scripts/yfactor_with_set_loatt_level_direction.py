@@ -26,7 +26,7 @@ parser.add_argument('switch_value', choices = ['hu', 'hl', 'vu', 'vl'], type = f
 
 args = parser.parse_args()
 
-att_vol = np.arange(21)    #have to repeat until determining optimal att voltage value
+att_vol = np.arange(21)    #search optimal Lo Att level
 switch.set_if_switch(switch_value)
 logger.start(yfactor)
 for att_v in att_vol:
