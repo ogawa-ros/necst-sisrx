@@ -20,7 +20,7 @@ logger = core_controller.logger()
 
 att = numpy.arange(21)          #search Lo Att level when Parameter Search
 logger.start(iv)           #tolk with logger team
-for att_vol in att:
+for att_vol in att:               #measure I-V curve
     loatt.set_loatt_vol(att_vol)
     sis = numpy.arange(0, 1.2, 0.01)
     for sis_vgap in sis:

@@ -29,12 +29,12 @@ args = parser.parse_args()
 att_vol = np.arange(21)    #search optimal Lo Att level
 switch.set_if_switch(switch_value)
 logger.start(yfactor)
-for att_v in att_vol:
+for att_v in att_vol:           #measure hot
     loatt.set_loatt_vol(vp1)
     time.sleep(0.1)
     continue
 time.sleep(10)
-for att_v in att_vol:
+for att_v in att_vol:           #measure cold
     loatt.set_loatt_vol(vp1)
     time.sleep(0.1)
     continue
