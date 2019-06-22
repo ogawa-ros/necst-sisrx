@@ -34,10 +34,14 @@ for vp1 in volp1:
     for vp2 in volp2:
         sis.set_sis_vp(vp2)
         time.sleep(0.1)
+        continue
+    continue
 time.sleep(10)
 for vp1 in volp1:
     sis.set_sis_vp(vp1)
     for vp2 in volp2:
         sis.set_sis_vp(vp2)
         time.sleep(0.1)
+        continue
+    continue
 logger.stop()
