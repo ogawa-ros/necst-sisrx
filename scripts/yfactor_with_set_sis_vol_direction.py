@@ -28,6 +28,7 @@ args = parser.parse_args()
 volp1 = np.linespace(-1, 0, 5)   #search optimal SIS voltage value
 volp2 = np.linespace(-1, 0, 5)
 switch.set_if_switch(switch_value)
+loatt.set_loatt_vol(att)
 logger.start(yfactor)
 for vp1 in volp1:             #measure hot
     sis.set_sis_vp(vp1)
