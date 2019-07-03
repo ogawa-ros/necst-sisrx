@@ -6,6 +6,7 @@ import rospy
 import time
 import std_msgs.msg
 import numpy
+import argparse
 
 import controller
 import core_controller
@@ -18,8 +19,16 @@ lo = controller.lo1st()
 loatt = controller.loatt()
 logger = core_controller.logger()
 
+parser = argparse.ArgumentParser(description = 'search Lo Att level when paramater search and measure SIS I-V curve')
+
+parser.add_argument('save_name', type = string, help = 'set saving file name')
+
+args = parser.parse_args()
+
+file_name = '/home/exito/data/logger/%s'%(save_name)
+print(file_name)
 att = numpy.arange(21)          #search Lo Att level when Parameter Search
-logger.start(iv)           #tolk with logger team
+logger.start(file_name)
 for att_vol in att:               #measure I-V curve
     loatt.set_loatt_vol(att_vol)
     sis = numpy.arange(0, 1.2, 0.01)
