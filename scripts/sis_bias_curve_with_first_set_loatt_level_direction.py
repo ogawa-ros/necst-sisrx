@@ -21,7 +21,7 @@ logger = core_controller.logger()
 
 parser = argparse.ArgumentParser(description = 'search Lo Att level when paramater search and measure SIS I-V curve')
 
-parser.add_argument('save_name', type = string, help = 'set saving file name')
+parser.add_argument('save_name', type = str, help = 'set saving file name')
 
 args = parser.parse_args()
 
