@@ -15,7 +15,7 @@ rospy.init_node(name)
 
 lo = controller.lo1st()
 
-parser = argparse.ArgumentParser(description = 'set freq and power of Lo SG')
+parser = argparse.ArgumentParser(description = 'set freq and power of Lo SG and on/off Lo SG')
 
 parser.add_argument('freq', type = float, help = 'set freq of Lo SG')
 parser.add_argument('power', type = float, help = 'set power of Lo SG')
