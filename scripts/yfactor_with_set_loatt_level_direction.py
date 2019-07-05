@@ -33,12 +33,7 @@ att_vol = np.arange(21)    #search optimal Lo Att level
 #switch.set_if_switch(args.switch_value)
 sis.set_sis_vp(args.sis_v)
 logger.start(file_name)
-for att_v in att_vol:           #measure hot
-    loatt.set_loatt_vol(att_v)
-    time.sleep(0.1)
-    continue
-time.sleep(10)
-for att_v in att_vol:           #measure cold
+for att_v in att_vol:           #measure y-factor
     loatt.set_loatt_vol(att_v)
     time.sleep(0.1)
     continue

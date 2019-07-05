@@ -46,15 +46,22 @@ class sis(object):
     def __init__(self):
         self.make_pub = make_pub()
 
-    def set_sis_vp(self, command):
-        topic_name = '/necst_sisrx/sis/vp_cmd'
+    def set_sis_vp1(self, command):
+        topic_name = '/necst/rx_sis2sb/vp1_cmd'
+        data_class = std_msgs.msg.Float64
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
+    def set_sis_vp2(self, command):
+        topic_name = '/necst/rx_sis2sb/vp2_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
         return
 
     def set_sis_vgap(self):
-        topic_name = '/necst_sisrx/sis/vgap_cmd'
+        topic_name = '/necst/rx_sis2sb/vgap_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, mag = command)
@@ -66,15 +73,29 @@ class irrsg(object):
     def __init__(self):
         self.make_pub = make_pub()
 
+    def set_irr_freq(self, command):
+        topic_name = '/necst/rx_sis2sb/irr/f_cmd'
+        data_class = std_msgs.msg.Float64
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
     def set_irrsg_freq(self, command):
-        topic_name = '/necst_sisrx/irrsg/f_cmd'
+        topic_name = '/necst/rx_sis2sb/irrsg/f_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
         return
 
     def set_irrsg_power(self, command):
-        topic_name = '/necst_sisrx/irrsg/p_cmd'
+        topic_name = '/necst/rx_sis2sb/irrsg/p_cmd'
+        data_class = std_msgs.msg.Float64
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
+    def set_irrsg_onoff(self, command):
+        topic_name = '/necst/rx_sis2sb/irrsg/onoff_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
@@ -86,15 +107,29 @@ class lo1st(object):
     def __init__(self):
         self.make_pub = make_pub()
 
-    def set_lo1st_freq(self, command):
-        topic_name = '/necst_sisrx/lo1st/f_cmd'
+    def set_lo1_freq(self, command):
+        topic_name = '/necst/rx_sis2sb/lo1/f_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
         return
 
-    def set_lo1st_power(self, command):
-        topic_name = '/necst_sisrx/lo1st/p_cmd'
+    def set_lo1sg_freq(self, command):
+        topic_name = '/necst/rx_sis2sb/lo1sg/f_cmd'
+        data_class = std_msgs.msg.Float64
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
+    def set_lo1sg_power(self, command):
+        topic_name = '/necst/rx_sis2sb/lo1sg/p_cmd'
+        data_class = std_msgs.msg.Float64
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
+    def set_lo1sg_onoff(self, command):
+        topic_name = '/necst/rx_sis2sb/lo1sg/onoff_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
@@ -106,8 +141,8 @@ class loatt(object):
     def __init__(self):
         self.make_pub = make_pub()
 
-    def set_loatt_vol(self, command):
-        topic_name = '/necst_sisrx/loatt/v_cmd'
+    def set_loatt(self, command):
+        topic_name = '/necst/rx_sis2sb/loatt/i_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)

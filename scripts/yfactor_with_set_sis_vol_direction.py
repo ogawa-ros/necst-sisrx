@@ -33,19 +33,11 @@ volp2 = np.linespace(-1, 0, 5)
 #switch.set_if_switch(args.switch_value)
 loatt.set_loatt_vol(args.att)
 logger.start(file_name)
-for vp1 in volp1:             #measure hot
+for vp1 in volp1:             #measure y-factor
     sis.set_sis_vp(vp1)
     for vp2 in volp2:
         sis.set_sis_vp(vp2)
-        time.sleep(0.1)
-        continue
-    continue
-time.sleep(10)
-for vp1 in volp1:             #measure cold
-    sis.set_sis_vp(vp1)
-    for vp2 in volp2:
-        sis.set_sis_vp(vp2)
-        time.sleep(0.1)
+        time.sleep(1)
         continue
     continue
 logger.stop()
