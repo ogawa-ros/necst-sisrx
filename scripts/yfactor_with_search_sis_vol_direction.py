@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-name = 'set_sis_vol_direction'
+name = 'search_sis_vol_direction'
 
 import rospy
 import time

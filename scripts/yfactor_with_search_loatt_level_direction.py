@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-name = 'set_loatt_level_direction'
+name = 'search_loatt_level_direction'
 
 import rospy
 import time

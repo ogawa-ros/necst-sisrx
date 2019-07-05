@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-name = 'sis_bias_curve_direction'
+name = 'sis_i-v_curve_direction'
 
 import rospy
 import time
