@@ -23,7 +23,6 @@ switch = tz2019_controller.switch()
 parser = argparse.ArgumentParser(description = 'search optical Lo Att voltage value')
 
 #parser.add_argument('switch_value', choices = ['hu', 'hl', 'vu', 'vl'], type = float, help = 'choice IF output port')
-parser.add_argument('sis_v', type = float, help = 'set optical SIS voltage value')
 parser.add_argument('save_name', type = str, help = 'set saving file name')
 
 args = parser.parse_args()
@@ -31,10 +30,9 @@ args = parser.parse_args()
 file_name = '/home/exito/data/logger/%s'%(args.save_name)
 att_vol = np.arange(21)    #search optimal Lo Att level
 #switch.set_if_switch(args.switch_value)
-sis.set_sis_vp(args.sis_v)
 logger.start(file_name)
 for att_v in att_vol:           #measure y-factor
-    loatt.set_loatt_vol(att_v)
+    loatt.set_loatt(att_v)
     time.sleep(0.1)
     continue
 logger.stop()

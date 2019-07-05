@@ -8,8 +8,6 @@ import std_msgs.msg
 import argparse
 
 import controller
-import core_controller
-import tz2019_controller
 
 rospy.init_node(name)
 
@@ -23,5 +21,5 @@ parser.add_argument('power', type = float, help = 'set power of Lo SG')
 
 args = parser.parse_args()
 
-lo.set_lo1st_freq(args.freq)
-lo.set_lo1st_power(args.power)
+lo.set_lo1_freq(args.freq)
+lo.set_lo1sg_power(args.power)
