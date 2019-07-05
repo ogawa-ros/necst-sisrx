@@ -14,7 +14,7 @@ rospy.init_node(name)
 sis = controller.sis()
 att = controller.loatt()
 
-parser = argparse.ArgumentParser(description = 'set SIS voltage V1 and V2')
+parser = argparse.ArgumentParser(description = 'set SIS voltage V1 and V2 and Lo Att. level')
 
 parser.add_argument('v1', type = float, help = 'set SIS voltage of V1')
 parser.add_argument('v2', type = float, help = 'set SIS voltage of V2')
