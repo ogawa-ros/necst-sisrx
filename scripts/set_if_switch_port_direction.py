@@ -2,10 +2,13 @@
 
 name = 'set_switch_ch_direction'
 
+import sys
 import rospy
 import time
 import std_msgs.msg
 import argparse
+
+import sys.path.append("/home/exito/ros/src/necst-tz2019/scripts")
 
 import tz2019_controller
 

@@ -2,11 +2,14 @@
 
 name = 'sis_i-v_curve_direction'
 
+import sys
 import rospy
 import time
 import std_msgs.msg
 import numpy
 import argparse
+
+import sys.path.append("/home/exito/ros/src/necst-core/scripts")
 
 import controller
 import core_controller
