@@ -32,9 +32,9 @@ att = numpy.arange(21)          #search Lo Att level when Parameter Search
 logger.start(file_name)
 for att_vol in att:               #measure I-V curve
     loatt.set_loatt(att_vol)
-    sis = numpy.arange(0, 1.2, 0.01)
-    for sis_vgap in sis:
-        sis.set_sis_vgap(sis_vgap)
+    sis_vgap = numpy.arange(0, 1.2, 0.01)
+    for vgap in sis_vgap:
+        sis.set_sis_vgap(vgap)
         time.sleep(0.1)
         continue
     continue
