@@ -30,7 +30,8 @@ print(file_name)
 logger.start(file_name)
 sis = numpy.arange(0, 1.2, 0.01)
 for sis_vgap in sis:
-    sis.set_vgap(sis_vgap)
+    vgap = sis_vgap
+    sis.set_vgap(vgap)
     time.sleep(0.1)
     continue
 logger.stop()
