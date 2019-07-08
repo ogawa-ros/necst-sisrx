@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-name = 'search_sis_vol_direction'
+name = 'measure_yfactor_search_sis_vol_direction'
 
 import sys
 import rospy

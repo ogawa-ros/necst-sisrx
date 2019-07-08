@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-name = 'search_loatt_level_direction'
+name = 'measure_yfactior_search_loatt_level_direction'
 
 import sys
 import rospy
