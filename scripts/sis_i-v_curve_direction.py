@@ -18,6 +18,7 @@ rospy.init_node(name)
 
 sis = controller.sis()
 logger = core_controller.logger()
+test = core_controller.test()
 
 parser = argparse.ArgumentParser(description = 'measure SIS I-V curve only')
 
@@ -25,8 +26,10 @@ parser.add_argument('save_name', type = str, help = 'set saving file name')
 
 args = parser.parse_args()
 
-file_name = '/home/exito/data/logger/test/%s'%(args.save_name)
-print(file_name)
+#file_name = '/home/exito/data/logger/test/%s'%(args.save_name)
+#print(file_name)
+test.msg_test('test')
+'''
 logger.start('')
 time.sleep(10)
 logger.start(file_name)
@@ -37,3 +40,4 @@ for vgap in sis_vgap:
     continue
 time.sleep(10)
 logger.stop()
+'''
