@@ -147,3 +147,16 @@ class loatt(object):
 
         self.make_pub.publish(topic_name, data_class, msg = command)
         return
+
+
+class test(object):
+
+    def __init__(self):
+        self.make_pub = make_pub()
+
+    def set_cur(self, command):
+        topic_name = '/test_topic2'
+        data_class = std_msgs.msg.Float64
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
