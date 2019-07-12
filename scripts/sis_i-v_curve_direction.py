@@ -27,6 +27,7 @@ args = parser.parse_args()
 
 file_name = '/home/exito/data/logger/test/%s'%(args.save_name)
 print(file_name)
+time.sleep(2)
 logger.start(file_name)
 '''
 sis_vgap = numpy.arange(0, 1.2, 0.01)
