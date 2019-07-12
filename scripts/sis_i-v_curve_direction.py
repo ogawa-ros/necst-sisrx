@@ -26,11 +26,9 @@ parser.add_argument('save_name', type = str, help = 'set saving file name')
 
 args = parser.parse_args()
 
-#file_name = '/home/exito/data/logger/test/%s'%(args.save_name)
-#print(file_name)
-#test.msg_test('test')
-time.sleep(1)
-test.msg_test('test')
+file_name = '/home/exito/data/logger/test/%s'%(args.save_name)
+print(file_name)
+sis.set_vp1(2)
 '''
 logger.start('')
 time.sleep(10)
