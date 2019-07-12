@@ -19,15 +19,17 @@ rospy.init_node(name)
 sis = controller.sis()
 logger = core_controller.logger()
 
+'''
 parser = argparse.ArgumentParser(description = 'measure SIS I-V curve only')
 
 parser.add_argument('save_name', type = str, help = 'set saving file name')
 
 args = parser.parse_args()
+'''
 
 #file_name = '/home/exito/data/logger/test/%s'%(args.save_name)
 #print(file_name)
-logger.start(args.save_name)
+logger.start("/test/20190712/1459-test.db")
 '''
 sis_vgap = numpy.arange(0, 1.2, 0.01)
 for vgap in sis_vgap:
