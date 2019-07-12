@@ -29,6 +29,8 @@ args = parser.parse_args()
 #file_name = '/home/exito/data/logger/test/%s'%(args.save_name)
 #print(file_name)
 test.msg_test('test')
+
+test.msg_test('test')
 '''
 logger.start('')
 time.sleep(10)
