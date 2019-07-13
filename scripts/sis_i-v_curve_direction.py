@@ -14,7 +14,7 @@ sys.path.append("/home/exito/ros/src/necst-core/scripts")
 import controller
 import core_controller
 
-rospy.init_node(name)
+#rospy.init_node(name)
 
 sis = controller.sis()
 logger = core_controller.logger()
