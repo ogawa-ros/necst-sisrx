@@ -18,7 +18,6 @@ rospy.init_node(name)
 
 sis = controller.sis()
 logger = core_controller.logger()
-test = core_controller.test()
 
 parser = argparse.ArgumentParser(description = 'measure SIS I-V curve only')
 
