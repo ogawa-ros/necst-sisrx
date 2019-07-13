@@ -35,4 +35,5 @@ for vgap in sis_vgap:
     time.sleep(0.1)
     continue
 '''
+time.sleep(0.1)
 logger.stop()
