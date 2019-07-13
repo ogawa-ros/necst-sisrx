@@ -28,6 +28,7 @@ args = parser.parse_args()
 file_name = '/home/exito/data/logger/test/%s'%(args.save_name)
 print(file_name)
 sis.set_vp1(1)
+time.sleep(1)
 sis.set_vp1(2)
 '''
 logger.start('')
