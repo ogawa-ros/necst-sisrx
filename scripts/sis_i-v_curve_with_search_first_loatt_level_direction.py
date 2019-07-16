@@ -31,11 +31,13 @@ print(file_name)
 att = numpy.arange(21)          #search Lo Att level when Parameter Search
 logger.start(file_name)
 for att_vol in att:               #measure I-V curve
-    loatt.set_loatt(att_vol)
+    loatt.set_cur(att_vol)
     sis_vgap = numpy.arange(0, 1.2, 0.01)
     for vgap in sis_vgap:
-        sis.set_sis_vgap(vgap)
+        sis.set_vgap(vgap)
         time.sleep(0.1)
         continue
     continue
+sis.set_vgap(0)
+att.set_cur(20)
 logger.stop()

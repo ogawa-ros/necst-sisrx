@@ -8,7 +8,7 @@ import time
 import std_msgs.msg
 import argparse
 
-import sys.path.append("/home/exito/ros/src/necst-core/scripts")
+sys.path.append("/home/exito/ros/src/necst-core/scripts")
 
 import controller
 import core_controller

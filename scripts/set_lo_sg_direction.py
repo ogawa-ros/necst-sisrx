@@ -17,9 +17,9 @@ parser = argparse.ArgumentParser(description = 'set freq and power of Lo SG and 
 
 parser.add_argument('freq', type = float, help = 'set freq of Lo SG')
 parser.add_argument('power', type = float, help = 'set power of Lo SG')
-#parser.add_argument('on_off', choices = ['on', 'off'], type = float, help = 'on/off Lo SG')
+#parser.add_argument('on_off', choices = ['on', 'off'], type = str, help = 'on/off Lo SG')
 
 args = parser.parse_args()
 
-lo.set_lo1_freq(args.freq)
-lo.set_lo1sg_power(args.power)
+lo.set_freq(args.freq)
+lo.set_sg_power(args.power)

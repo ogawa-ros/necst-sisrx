@@ -19,4 +19,4 @@ parser.add_argument('att', type = float, help = 'set Lo Att. level')
 
 args = parser.parse_args()
 
-att.set_loatt(args.att)
+att.set_cur(args.att)

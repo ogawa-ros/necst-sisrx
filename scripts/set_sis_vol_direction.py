@@ -20,5 +20,5 @@ parser.add_argument('v2', type = float, help = 'set SIS voltage of V2')
 
 args = parser.parse_args()
 
-sis.set_sis_vp1(args.v1)
-sis.set_sis_vp2(args.v2)
+sis.set_vp1(args.v1)
+sis.set_vp2(args.v2)

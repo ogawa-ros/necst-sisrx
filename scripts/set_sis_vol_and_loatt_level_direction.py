@@ -22,6 +22,6 @@ parser.add_argument('att', type = float, help = 'set Lo Att. level')
 
 args = parser.parse_args()
 
-sis.set_sis_vp1(args.v1)
-sis.set_sis_vp2(args.v2)
-att.set_loatt(args.att)
+sis.set_vp1(args.v1)
+sis.set_vp2(args.v2)
+att.set_cur(args.att)

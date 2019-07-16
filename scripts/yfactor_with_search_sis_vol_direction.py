@@ -9,7 +9,7 @@ import std_msgs.msg
 import numpy as np
 import argparse
 
-import sys.path.append("/home/exito/ros/src/necst-core/scripts")
+sys.path.append("/home/exito/ros/src/necst-core/scripts")
 
 import controller
 import core_controller
@@ -31,10 +31,11 @@ volp1 = np.linespace(-1, 0, 5)   #search optimal SIS voltage value
 volp2 = np.linespace(-1, 0, 5)
 logger.start(file_name)
 for vp1 in volp1:             #measure y-factor
-    sis.set_sis_vp1(vp1)
+    sis.set_vp1(vp1)
     for vp2 in volp2:
-        sis.set_sis_vp2(vp2)
+        sis.set_vp2(vp2)
         time.sleep(1)
         continue
     continue
+sis.set_vgap(0)
 logger.stop()

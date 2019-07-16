@@ -9,7 +9,7 @@ import std_msgs.msg
 import numpy
 import argparse
 
-import sys.path.append("/home/exito/ros/src/necst-core/scripts")
+sys.path.append("/home/exito/ros/src/necst-core/scripts")
 
 import controller
 import core_controller
@@ -31,7 +31,8 @@ file_name = '/home/exito/data/logger/%s'%(args.save_name)
 att_vol = np.arange(21)    #search optimal Lo Att level
 logger.start(file_name)
 for att_v in att_vol:           #measure y-factor
-    loatt.set_loatt(att_v)
+    loatt.set_cur(att_v)
     time.sleep(1)
     continue
+loatt.set_cur(20)
 logger.stop()
