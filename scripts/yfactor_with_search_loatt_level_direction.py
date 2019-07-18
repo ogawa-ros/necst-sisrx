@@ -10,15 +10,17 @@ import numpy
 import argparse
 
 sys.path.append("/home/exito/ros/src/necst-core/scripts")
+sys.path.append("/home/exito/ros/src/necst-tz2019/scripts")
 
 import controller
 import core_controller
+import tz2019_controller
 
 rospy.init_node(name)
 
-sis = controller.sis()
 irrsg = controller.irrsg()
-loatt = controller.loatt()
+loatt1 = tz2019_controller.loatt()
+loatt2 = tz2019_controller.loatt()
 logger = core_controller.logger()
 
 parser = argparse.ArgumentParser(description = 'search optical Lo Att voltage value')
@@ -31,7 +33,9 @@ file_name = '/home/exito/data/logger/%s'%(args.save_name)
 att_vol = np.arange(21)    #search optimal Lo Att level
 logger.start(file_name)
 for att_v in att_vol:           #measure y-factor
-    loatt.set_cur(att_v)
+    loatt1.set_cur(att_v)
+    time.sleep(60)
+    loatt2.set_cur(att_v)
     time.sleep(1)
     continue
 loatt.set_cur(20)

@@ -17,7 +17,6 @@ import core_controller
 rospy.init_node(name)
 
 sis = controller.sis()
-loatt = controller.loatt()
 logger = core_controller.logger()
 
 parser = argparse.ArgumentParser(description = 'search optical sis voltage value')

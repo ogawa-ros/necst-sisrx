@@ -10,13 +10,10 @@ import argparse
 
 sys.path.append("/home/exito/ros/src/necst-core/scripts")
 
-import controller
 import core_controller
 
 rospy.init_node(name)
 
-sis = controller.sis()
-loatt = controller.loatt()
 logger = core_controller.logger()
 
 parser = argparse.ArgumentParser(description = 'measure Y-factor only')

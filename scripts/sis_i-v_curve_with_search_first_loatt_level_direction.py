@@ -10,14 +10,17 @@ import numpy
 import argparse
 
 sys.path.append("/home/exito/ros/src/necst-core/scripts")
+sys.path.append("/home/exito/ros/src/necst-tz2019/scripts")
 
 import controller
 import core_controller
+import tz2019_controler
 
 rospy.init_node(name)
 
 sis = controller.sis()
-loatt = controller.loatt()
+loatt1 = tz2019_controller.loatt_h()
+loatt2 = tz2019_controller.loatt_v()
 logger = core_controller.logger()
 
 parser = argparse.ArgumentParser(description = 'search Lo Att level when paramater search and measure SIS I-V curve')
@@ -31,13 +34,17 @@ print(file_name)
 att = numpy.arange(21)          #search Lo Att level when Parameter Search
 logger.start(file_name)
 for att_vol in att:               #measure I-V curve
-    loatt.set_cur(att_vol)
+    loatt1.set_cur(att_vol)
+    time.sleep(60)
+    loatt2.set_cur(att_vol)
     sis_vgap = numpy.arange(0, 1.2, 0.01)
     for vgap in sis_vgap:
         sis.set_vgap(vgap)
         time.sleep(0.1)
         continue
+    #time.sleep(60)
     continue
 sis.set_vgap(0)
-att.set_cur(20)
+att1.set_cur(20)
+att2.set_cur(20)
 logger.stop()
