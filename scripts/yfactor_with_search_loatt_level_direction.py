@@ -19,8 +19,8 @@ import tz2019_controller
 rospy.init_node(name)
 
 irrsg = controller.irrsg()
-loatt1 = tz2019_controller.loatt()
-loatt2 = tz2019_controller.loatt()
+loatt1 = tz2019_controller.loatt_h()
+loatt2 = tz2019_controller.loatt_v()
 logger = core_controller.logger()
 
 parser = argparse.ArgumentParser(description = 'search optical Lo Att voltage value')
@@ -36,7 +36,9 @@ for att_v in att_vol:           #measure y-factor
     loatt1.set_cur(att_v)
     time.sleep(60)
     loatt2.set_cur(att_v)
-    time.sleep(1)
+    time.sleep(60)
     continue
-loatt.set_cur(20)
+loatt1.set_cur(20)
+time.sleep(60)
+loatt2.set_cur(20)
 logger.stop()
