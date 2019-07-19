@@ -94,7 +94,7 @@ class irr(object):
 
     def set_sg_onoff(self, command):
         topic_name = '/necst/rx_sis2sb/irrsg/onoff_cmd'
-        data_class = std_msgs.msg.Float64
+        data_class = std_msgs.msg.String
 
         self.make_pub.publish(topic_name, data_class, msg = command)
         return
