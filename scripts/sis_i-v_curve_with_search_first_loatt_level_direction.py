@@ -38,7 +38,7 @@ for att_vol in att:               #measure I-V curve
     loatt1.set_cur(att_vol)
     time.sleep(60)
     loatt2.set_cur(att_vol)
-    sis_vgap = numpy.arange(0, 1.2, 0.01)
+    sis_vgap = numpy.arange(0, 1.2, 0.001)
     for vgap in sis_vgap:
         sis.set_vgap(vgap)
         time.sleep(0.1)
