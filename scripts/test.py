@@ -16,9 +16,20 @@ import core_controller
 import tz2019_controller
 
 rospy.init_node(name)
-
+sis = controller.sis()
 att1 = tz2019_controller.loatt_h()
 att2 = tz2019_controller.loatt_v()
+logger = core_controller.logger()
+
+parser = argparse.ArgumentParser(description = 'search Lo Att level when paramater search and measure SIS I-V curve')
+
+parser.add_argument('save_name', type = str, help = 'set saving file name')
+
+args = parser.parse_args()
+
+file_name = '/home/exito/data/logger/test/%s'%(args.save_name)
+print(file_name)
+
 
 att1.set_cur(10)
 time.sleep(60)
@@ -50,3 +61,6 @@ print("att_level = 30")
         sis.set_vgap(vgap)
         time.sleep(0.05)
         continue
+
+sis.set_vgap(0)
+logger.stop()
