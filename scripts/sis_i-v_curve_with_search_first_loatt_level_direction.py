@@ -47,5 +47,6 @@ for att_vol in att:               #measure I-V curve
     continue
 sis.set_vgap(0)
 att1.set_cur(30)
+time.sleep(60)
 att2.set_cur(30)
 logger.stop()
