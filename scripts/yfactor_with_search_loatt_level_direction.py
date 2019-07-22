@@ -38,7 +38,7 @@ for att_v in att_vol:           #measure y-factor
     loatt2.set_cur(att_v)
     time.sleep(60)
     continue
-loatt1.set_cur(20)
+loatt1.set_cur(30)
 time.sleep(60)
-loatt2.set_cur(20)
+loatt2.set_cur(30)
 logger.stop()
