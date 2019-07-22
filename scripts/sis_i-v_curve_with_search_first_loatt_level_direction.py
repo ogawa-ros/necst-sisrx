@@ -14,7 +14,7 @@ sys.path.append("/home/exito/ros/src/necst-tz2019/scripts")
 
 import controller
 import core_controller
-import tz2019_controler
+import tz2019_controller
 
 rospy.init_node(name)
 
