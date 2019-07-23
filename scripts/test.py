@@ -41,6 +41,7 @@ for vgap in sis_vgap:
     sis.set_vgap(vgap)
     time.sleep(0.05)
     continue
+logger.stop()
 
 file_name2 = '/home/exito/data/logger/test/%s/level=20.db'%(args.save_name)
 print(file_name2)
@@ -55,6 +56,7 @@ for vgap in sis_vgap:
     sis.set_vgap(vgap)
     time.sleep(0.05)
     continue
+logger.stop()
 
 file_name3 = '/home/exito/data/logger/test/%s/level=30.db'%(args.save_name)
 print(file_name3)
