@@ -29,7 +29,7 @@ args = parser.parse_args()
 
 file_name = '/home/exito/data/logger/test/%s'%(args.save_name)
 print(file_name)
-
+logger.start(file_name)
 
 att1.set_cur(10)
 time.sleep(60)
