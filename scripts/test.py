@@ -5,6 +5,7 @@ name = 'test'
 import sys
 import rospy
 import time
+import numpy
 import std_msgs.msg
 import argparse
 
