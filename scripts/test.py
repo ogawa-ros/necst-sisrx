@@ -28,7 +28,7 @@ parser.add_argument('save_name', type = str, help = 'set saving file name')
 
 args = parser.parse_args()
 
-file_name = '/home/exito/data/logger/test/%s'%(args.save_name)
+file_name = '/home/exito/data/logger/test/%s/level=10'%(args.save_name)
 print(file_name)
 logger.start(file_name)
 
@@ -36,31 +36,38 @@ att1.set_cur(10)
 time.sleep(60)
 att2.set_cur(10)
 print("att_level = 10")
-sis_vgap = numpy.arange(0, 1.2, 0.001)
+sis_vgap = numpy.arange(0, 1.2, 0.005)
 for vgap in sis_vgap:
     sis.set_vgap(vgap)
-    time.sleep(0.05)
+    time.sleep(0.01)
     continue
+
+file_name = '/home/exito/data/logger/test/%s/level=20'%(args.save_name)
+print(file_name)
+logger.start(file_name)
 
 att1.set_cur(20)
 time.sleep(60)
 att2.set_cur(20)
 print("att_level = 20")
-sis_vgap = numpy.arange(0, 1.2, 0.001)
+sis_vgap = numpy.arange(0, 1.2, 0.005)
 for vgap in sis_vgap:
     sis.set_vgap(vgap)
-    time.sleep(0.05)
+    time.sleep(0.01)
     continue
 
+file_name = '/home/exito/data/logger/test/%s/level=30'%(args.save_name)
+print(file_name)
+logger.start(file_name)
 
 att1.set_cur(30)
 time.sleep(60)
 att2.set_cur(30)
 print("att_level = 30")
-sis_vgap = numpy.arange(0, 1.2, 0.001)
+sis_vgap = numpy.arange(0, 1.2, 0.005)
 for vgap in sis_vgap:
     sis.set_vgap(vgap)
-    time.sleep(0.05)
+    time.sleep(0.01)
     continue
 
 sis.set_vgap(0)
