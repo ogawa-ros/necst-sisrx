@@ -75,7 +75,7 @@ dd = pandas.concat(
 
 #under the i-v graph plot
 
-fig = matplotlib.pyplot.figure(figsize=(7, 6))
+fig = plt.figure(figsize=(7, 6))
 ax = [fig.add_subplot(2, 2, i) for i in range(1, 5)]
 ax[0].plot(dd['V1V'], dd['V1I'], '.')
 ax[1].plot(dd['H1V'], dd['H1I'], '.')
