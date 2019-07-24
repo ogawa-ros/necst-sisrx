@@ -89,7 +89,7 @@ ax[3].set_title('V2 I-V')
 [_.set_ylabel('Current (uA)') for _ in ax]
 [_.grid(True, linestyle=':') for _ in ax]
 
-plt.savefig(args.save_name)
+#plt.savefig(args.save_name)
 plt.show()
 
 #file_name2 = '/home/exito/data/logger/test/%s/level=20.db'%(args.save_name)
