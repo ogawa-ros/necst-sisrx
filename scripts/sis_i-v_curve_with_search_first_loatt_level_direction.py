@@ -29,24 +29,26 @@ parser.add_argument('save_name', type = str, help = 'set saving file name')
 
 args = parser.parse_args()
 
-file_name = '/home/exito/data/logger/test/%s'%(args.save_name)
-print(file_name)
-att = numpy.arange(15, 31, 5)
+
+att = numpy.arange(20, 31, 5)
 att = att[::-1]          #search Lo Att level when Parameter Search
-logger.start(file_name)
-for att_vol in att:               #measure I-V curve
+
+for att_vol in att:
+    file_name = '/home/exito/data/logger/test/%s/att_level=%d'%(args.save_name, att_vol)
+    print(file_name)
+    logger.start(file_name)             #measure I-V curve
     loatt1.set_cur(att_vol)
     time.sleep(60)
     loatt2.set_cur(att_vol)
     sis_vgap = numpy.arange(0, 1.2, 0.001)
     for vgap in sis_vgap:
         sis.set_vgap(vgap)
-        time.sleep(0.1)
+        time.sleep(0.01)
         continue
     #time.sleep(60)
+    logger.stop()
     continue
 sis.set_vgap(0)
 loatt1.set_cur(30)
 time.sleep(60)
 loatt2.set_cur(30)
-logger.stop()
