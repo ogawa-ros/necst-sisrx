@@ -42,7 +42,7 @@ logger.start(file_name1)
 att1.set_cur(20)
 time.sleep(60)
 att2.set_cur(20)
-print("att_level = 10")
+print("att_level = 20")
 sis_vgap = numpy.arange(0, 1.2, 0.001)
 for vgap in sis_vgap:
     sis.set_vgap(vgap)
