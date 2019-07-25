@@ -90,9 +90,9 @@ for att_vol in att:
     [_.set_ylabel('Current (uA)') for _ in ax]
     [_.grid(True, linestyle=':') for _ in ax]
 
-    #plt.savefig(args.save_name)
     plt.suptitle('att_level = %d'%(att_vol))
-    plt.show()
+    #plt.show()
+    plt.savefig('/home/exito/data/logger/test/%s/att_level=%d.png'(args.save_name, att_vol))
     continue
 
 sis.set_vgap(0)
