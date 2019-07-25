@@ -78,7 +78,6 @@ for att_vol in att:
 
     fig = plt.figure(figsize=(7, 6))
     ax = [fig.add_subplot(2, 2, i) for i in range(1, 5)]
-    ax.set_title('att_level = %d'%(att_vol))
     ax[0].plot(dd['V1V'], dd['V1I'], '.')
     ax[1].plot(dd['H1V'], dd['H1I'], '.')
     ax[2].plot(dd['V2V'], dd['V2I'], '.')
@@ -92,6 +91,7 @@ for att_vol in att:
     [_.grid(True, linestyle=':') for _ in ax]
 
     #plt.savefig(args.save_name)
+    plt.suptitle('att_level = %d'%(att_vol))
     plt.show()
     continue
 
