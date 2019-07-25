@@ -65,6 +65,33 @@ class sis(object):
         self.make_pub.publish(topic_name, data_class, msg = command)
         return
 
+    def set_v1(self, command):
+        topic_name = 'tz2019/sis_v1/v_cmd'
+        data_class = std_msgs.msg.Float64
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
+    def set_h1(self, command):
+        topic_name = 'tz2019/sis_h1/v_cmd'
+        data_class = std_msgs.msg.Float64
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
+    def set_h2(self, command):
+        topic_name = 'tz2019/sis_h2/v_cmd'
+        data_class = std_msgs.msg.Float64
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
+    def set_v2(self, command):
+        topic_name = 'tz2019/sis_v2/v_cmd'
+        data_class = std_msgs.msg.Float64
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
 
 class irr(object):
 
