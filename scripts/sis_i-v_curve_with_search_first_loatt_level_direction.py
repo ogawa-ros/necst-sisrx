@@ -92,7 +92,8 @@ for att_vol in att:
 
     plt.suptitle('att_level = %d'%(att_vol))
     #plt.show()
-    plt.savefig('/home/exito/data/logger/test/' + args.save_name + '/att_level=' + att_vol +'.png')
+    graph_file_name = '/home/exito/data/logger/test/' + args.save_name + '/att_level=' + att_vol +'.png'
+    plt.savefig(graph_file_name)
     continue
 
 sis.set_vgap(0)
