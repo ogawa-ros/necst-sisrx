@@ -36,7 +36,7 @@ sis.set_h1(args.h1)
 sis.set_h2(args.h2)
 sis.set_v2(args.v2)
 
-file_name = '/home/exito/data/logger/test/%sset_vol_data.db'%(args.save_name, att_vol)
+file_name = '/home/exito/data/logger/test/%sset_vol_data.db'%(args.save_name)
 print(file_name)
 logger.start(file_name)
 time.sleep(10)
