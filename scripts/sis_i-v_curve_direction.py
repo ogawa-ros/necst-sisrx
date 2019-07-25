@@ -10,9 +10,12 @@ import numpy
 import argparse
 
 sys.path.append("/home/exito/ros/src/necst-core/scripts")
-
 import controller
 import core_controller
+
+sys.path.append("/home/exito/ros/src/necst-tz2019/scripts")
+import plot_tool
+
 
 rospy.init_node(name)
 
@@ -35,3 +38,5 @@ for vgap in sis_vgap:
     continue
 sis.set_vgap(0)
 logger.stop()
+
+plot_tool.iv_plot(file_name, args.save_name)
