@@ -37,7 +37,7 @@ att = numpy.arange(20, 31, 5)
 att = att[::-1]          #search Lo Att level when Parameter Search
 
 for att_vol in att:
-    file_name = '/home/exito/data/logger/test/%s/att_level=%d.db'%(args.save_name, att_vol)
+    file_name = '/home/exito/data/logger/test/%s/att_level=%d_data.db'%(args.save_name, att_vol)
     print(file_name)
     logger.start(file_name)             #measure I-V curve
     loatt1.set_cur(att_vol)
@@ -92,7 +92,7 @@ for att_vol in att:
 
     plt.suptitle('att_level = %d'%(att_vol))
     #plt.show()
-    plt.savefig('/home/exito/data/logger/test/%s/att_level=%d.png'(args.save_name, att_vol))
+    plt.savefig('/home/exito/data/logger/test/' + args.save_name + '/att_level=' + att_vol '.png')
     continue
 
 sis.set_vgap(0)
