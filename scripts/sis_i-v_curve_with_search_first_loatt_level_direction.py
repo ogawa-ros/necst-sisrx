@@ -49,7 +49,7 @@ for att_vol in att:
     sis_vgap = numpy.arange(0, 1.2, 0.001)
     for vgap in sis_vgap:
         sis.set_vgap(vgap)
-        time.sleep(0.05)
+        time.sleep(0.1)
         continue
     #time.sleep(60)
     logger.stop()
