@@ -36,7 +36,8 @@ parser.add_argument('save_name', type = str, help = 'set saving file name')
 args = parser.parse_args()
 
 
-att = numpy.arange(15, 31, 5)
+#att = numpy.arange(15, 31, 5)
+att = [17, 20, 25, 30]
 att = att[::-1]          #search Lo Att level when Parameter Search
 
 for att_vol in att:
