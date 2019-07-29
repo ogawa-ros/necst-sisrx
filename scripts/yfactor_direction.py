@@ -24,5 +24,5 @@ args = parser.parse_args()
 
 file_name = '/home/exito/data/logger/%s'%(args.save_name)
 logger.start(file_name)
-time.sleep(1)
+time.sleep(30)
 logger.stop()
