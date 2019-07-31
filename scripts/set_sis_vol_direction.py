@@ -8,17 +8,10 @@ import std_msgs.msg
 import argparse
 import controller
 import time
-import sys
-
-sys.path.append("/home/exito/ros/src/necst-core/scripts")
-import core_controller
-
-
 
 rospy.init_node(name)
 
 sis = controller.sis()
-logger = core_controller.logger()
 
 parser = argparse.ArgumentParser(description = 'set SIS voltage V1 and V2')
 
@@ -26,7 +19,6 @@ parser.add_argument('v1', type = float, help = 'set SIS voltage of V1')
 parser.add_argument('h1', type = float, help = 'set SIS voltage of V2')
 parser.add_argument('h2', type = float, help = 'set SIS voltage of V1')
 parser.add_argument('v2', type = float, help = 'set SIS voltage of V2')
-
 
 args = parser.parse_args()
 
