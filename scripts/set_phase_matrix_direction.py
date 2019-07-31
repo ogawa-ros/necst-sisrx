@@ -22,7 +22,7 @@ parser.add_argument('power', type = float, help = 'set power of Phase Matrix')
 args = parser.parse_args()
 
 if args.on_off == 'on':
-    irr.set_freq(args.freq)
+    irr.set_sg_freq(args.freq)
     irr.set_sg_power(args.power)
     irr.set_sg_onoff(args.on_off)
 
