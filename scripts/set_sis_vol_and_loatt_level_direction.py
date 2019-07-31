@@ -30,6 +30,6 @@ args = parser.parse_args()
 
 sis.set_vp1(args.v1)
 sis.set_vp2(args.v2)
-att1.set_cur(args.att)
+att1.set_cur(args.att1)
 time.sleep(60)
-att2.set_cur(args.att)
+att2.set_cur(args.att2)
