@@ -28,4 +28,3 @@ if args.on_off == 'on':
 
 elif args.on_off == 'off':
     lo.set_sg_onoff(args.on_off)
-    
