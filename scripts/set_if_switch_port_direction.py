@@ -22,4 +22,5 @@ parser.add_argument('switch', type = float, choices = ['hu', 'hl', 'vu', 'vl'], 
 
 args = parser.parse_args()
 
-switch.set_ch(args.swith)
+switch.set_open_ch(args.switch)
+switch.set_close_ch(srgs.switch)
