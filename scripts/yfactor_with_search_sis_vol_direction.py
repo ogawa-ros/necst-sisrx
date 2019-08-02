@@ -25,16 +25,16 @@ parser.add_argument('save_name', type = str, help = 'set saving file name')
 
 args = parser.parse_args()
 
-file_name = '/home/exito/data/logger/%s'%(args.save_name)
 volp1 = np.linespace(-1, 0, 5)   #search optimal SIS voltage value
 volp2 = np.linespace(-1, 0, 5)
-logger.start(file_name)
 for vp1 in volp1:             #measure y-factor
     sis.set_vp1(vp1)
     for vp2 in volp2:
+        file_name = '/home/exito/data/logger/test/%s-%s-%s.db'%(args.save_name, str(vp1), str(vp2))
+        logger.start(file_name)
         sis.set_vp2(vp2)
         time.sleep(1)
+        logger.stop()
         continue
     continue
 sis.set_vgap(0)
-logger.stop()
