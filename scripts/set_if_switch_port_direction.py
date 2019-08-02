@@ -18,7 +18,7 @@ switch = tz2019_controller.switch()
 
 parser = argparse.ArgumentParser(description = 'set IF switch ch')
 
-parser.add_argument('switch', type = string, choices = ['HU', 'HL', 'VU', 'VL'], help = 'set IF switch ch')
+parser.add_argument('switch', choices = ['HU', 'HL', 'VU', 'VL'], help = 'set IF switch ch')
 
 args = parser.parse_args()
 
