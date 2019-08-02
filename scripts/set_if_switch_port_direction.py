@@ -23,4 +23,4 @@ parser.add_argument('switch', choices = ['HU', 'HL', 'VU', 'VL'], help = 'set IF
 args = parser.parse_args()
 
 switch.set_open_ch(args.switch)
-switch.set_close_ch(srgs.switch)
+switch.set_close_ch(args.switch)
