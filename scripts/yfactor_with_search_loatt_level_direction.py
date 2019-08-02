@@ -29,16 +29,16 @@ parser.add_argument('save_name', type = str, help = 'set saving file name')
 
 args = parser.parse_args()
 
-file_name = '/home/exito/data/logger/test/%s.db'%(args.save_name)
-att_vol = numpy.arange(21)    #search optimal Lo Att level
-logger.start(file_name)
+att_vol = [23, 25, 27]    #search optimal Lo Att level
 for att_v in att_vol:           #measure y-factor
+    file_name = '/home/exito/data/logger/test/%s-%s.db'%(args.save_name, str(att_v))
+    logger.start(file_name)
     loatt1.set_cur(att_v)
     time.sleep(60)
     loatt2.set_cur(att_v)
     time.sleep(60)
+    logger.stop()
     continue
 loatt1.set_cur(30)
 time.sleep(60)
 loatt2.set_cur(30)
-logger.stop()
