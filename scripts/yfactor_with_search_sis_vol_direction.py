@@ -33,7 +33,7 @@ for vp1 in volp1:             #measure y-factor
         file_name = '/home/exito/data/logger/test/%s-%s-%s.db'%(args.save_name, str(vp1), str(vp2))
         logger.start(file_name)
         sis.set_vp2(vp2)
-        time.sleep(1)
+        time.sleep(30)
         logger.stop()
         continue
     continue
