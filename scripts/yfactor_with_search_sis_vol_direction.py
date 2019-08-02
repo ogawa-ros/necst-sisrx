@@ -25,8 +25,8 @@ parser.add_argument('save_name', type = str, help = 'set saving file name')
 
 args = parser.parse_args()
 
-volp1 = np.linespace(-1, 0, 5)   #search optimal SIS voltage value
-volp2 = np.linespace(-1, 0, 5)
+volp1 = np.linspace(-1, 0, 5)   #search optimal SIS voltage value
+volp2 = np.linspace(-1, 0, 5)
 for vp1 in volp1:             #measure y-factor
     sis.set_vp1(vp1)
     for vp2 in volp2:
