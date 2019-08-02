@@ -18,7 +18,7 @@ import tz2019_controller
 
 rospy.init_node(name)
 
-irrsg = controller.irrsg()
+irrsg = controller.irr()
 loatt1 = tz2019_controller.loatt_h()
 loatt2 = tz2019_controller.loatt_v()
 logger = core_controller.logger()
