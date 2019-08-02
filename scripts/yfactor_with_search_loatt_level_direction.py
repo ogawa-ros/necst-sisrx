@@ -29,7 +29,7 @@ parser.add_argument('save_name', type = str, help = 'set saving file name')
 
 args = parser.parse_args()
 
-file_name = '/home/exito/data/logger/%s'%(args.save_name)
+file_name = '/home/exito/data/logger/test/%s.db'%(args.save_name)
 att_vol = np.arange(21)    #search optimal Lo Att level
 logger.start(file_name)
 for att_v in att_vol:           #measure y-factor
