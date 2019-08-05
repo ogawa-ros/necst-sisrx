@@ -128,7 +128,8 @@ def yfactor_prot(file_name, save_name):
         axis = 1,
     )
 
-    power = numpy.array(dd['power'])
+    p = numpy.array(dd['power'])
+    power = p[30][0]
     trx = exp_yfactor.evaluate_trx_from_rotating_chopper_data(power, 300, 77)
 
     fig = plt.figure(figsize=(8,4))
