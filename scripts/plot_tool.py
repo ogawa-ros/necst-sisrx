@@ -132,7 +132,7 @@ def yfactor_prot(file_name, save_name):
 
     p = numpy.array(spdata)
     power = p[30][0]
-    #trx = exp_yfactor.evaluate_trx_from_rotating_chopper_data(power, 300, 77)
+    trx = exp_yfactor.evaluate_trx_from_rotating_chopper_data(power, 300, 77)
 
     fig = plt.figure(figsize=(8,4))
     ax = fig.add_subplot(111)
@@ -142,7 +142,7 @@ def yfactor_prot(file_name, save_name):
     ax.set_title('yfactor-measurement')
     ax.grid(True)
     fig.savefig('/home/exito/data/logger/test/' + str(save_name) +'.png')
-    #return trx
+    return trx
 
 #if __name__ == '__main__':
 #iv_plot(file_name, save_name)
