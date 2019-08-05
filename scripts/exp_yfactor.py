@@ -61,7 +61,7 @@ def evaluate_trx_from_rotating_chopper_data(d, thot, tcold, smooth=3, cut=10, ns
     ibot = numpy.where(sdd < -sig*nsig)[0]
 
     mask = numpy.concatenate([iup, ibot])
-    d[mask] = numpy.nan
+    #d[mask] = numpy.nan
     av = numpy.nanmean(d)
     dup = d[numpy.where(d>av)]
     dbot = d[numpy.where(d<av)]
@@ -70,7 +70,7 @@ def evaluate_trx_from_rotating_chopper_data(d, thot, tcold, smooth=3, cut=10, ns
     dcold = numpy.mean(dbot)
 
     tsys = yfactor_dB(dhot, dcold, thot, tcold)
-    return tsys, (dhot, dcold, mask)
+    return tsys, (dhot, dcold)
 
 def yfactor(dhot, dcold, thot, tcold):
     dhot = numpy.array(dhot)
