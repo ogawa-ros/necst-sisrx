@@ -62,6 +62,7 @@ def evaluate_trx_from_rotating_chopper_data(d, thot, tcold, smooth=3, cut=10, ns
 
     mask = numpy.concatenate([iup, ibot])
     #d[mask] = numpy.nan
+    d = numpy.reshape(d,(1, 461))
     av = numpy.nanmean(d)
     dup = d[numpy.where(d>av)]
     dbot = d[numpy.where(d<av)]
