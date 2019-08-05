@@ -121,12 +121,6 @@ def yfactor_prot(file_name, save_name):
     d['data'] = [_[0]['data'] for _ in d['msgs']]
     d2 = d.set_index(['topic', 'time']).sort_index()
 
-    #dd = pandas.concat(
-    #    [
-    #        d2.loc['/dev/n9343c/ip_192_168_100_185/spec'][['data']].rename(columns={'data': 'power'}).astype(float).resample('0.1S').mean(),
-    #    ],
-    #    axis = 1,
-    #)
 
     spdata = d2.loc['/dev/n9343c/ip_192_168_100_185/spec'][['data']]
 

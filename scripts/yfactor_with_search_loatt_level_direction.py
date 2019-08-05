@@ -8,6 +8,7 @@ import time
 import std_msgs.msg
 import numpy
 import argparse
+import plot_tool
 
 sys.path.append("/home/exito/ros/src/necst-core/scripts")
 sys.path.append("/home/exito/ros/src/necst-tz2019/scripts")
@@ -30,15 +31,21 @@ parser.add_argument('save_name', type = str, help = 'set saving file name')
 args = parser.parse_args()
 
 att_vol = [23, 25, 27]    #search optimal Lo Att level
+trxarray = []
 for att_v in att_vol:           #measure y-factor
     file_name = '/home/exito/data/logger/test/%s-%s.db'%(args.save_name, str(att_v))
+    save = '%s_attlevel = %s'%(args.save_name, str(att_v))
     logger.start(file_name)
     loatt1.set_cur(att_v)
     time.sleep(60)
     loatt2.set_cur(att_v)
     time.sleep(60)
     logger.stop()
+    trx = plot_tool.yfactor_prot(file_name, save)
+    trxarray = trxarray.append(trx)
     continue
 loatt1.set_cur(30)
 time.sleep(60)
 loatt2.set_cur(30)
+
+print(str(trxarray))
