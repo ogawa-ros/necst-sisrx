@@ -11,7 +11,7 @@ import argparse
 sys.path.append("/home/exito/ros/src/necst-core/scripts")
 import core_controller
 
-sys.path.append("/home/exito/ros/src/necst-tz2019/scripts")
+
 import plot_tool
 
 rospy.init_node(name)
