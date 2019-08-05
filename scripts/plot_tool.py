@@ -136,7 +136,7 @@ def yfactor_prot(file_name, save_name):
 
     fig = plt.figure(figsize=(8,4))
     ax = fig.add_subplot(111)
-    ax.plot(power, '_')
+    ax.plot(power)
     ax.set_xlabel('time')
     ax.set_ylabel('power (dBm)')
     ax.set_title('yfactor-measurement')
