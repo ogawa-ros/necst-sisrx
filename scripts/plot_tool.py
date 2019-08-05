@@ -137,7 +137,7 @@ def yfactor_prot(file_name, save_name):
     ax.plot(power, '_')
     ax.set_xlabel('time')
     ax.set_ylabel('power (dBm)')
-    ax.set_title('yfactor-measurement'
+    ax.set_title('yfactor-measurement')
     ax.grid(True)
     fig.savefig('/home/exito/data/logger/' + str(save_name) +'.png')
     #return trx
