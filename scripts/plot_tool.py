@@ -173,8 +173,9 @@ def sis_bias_and_yfactor_matrix_plot(trx, save_name):
     plt.xlabel('v2_vol[mV]')
     plt.ylabel('v1_vol[mV]')
     plt.title("yfactor_map")
+    plt.show()
 
-    plt.savefig('/home/exito/data/logger/test/' + str(save_name) + '/yfactor_matrix.png')
+    #plt.savefig('/home/exito/data/logger/test/' + str(save_name) + '/yfactor_matrix.png')
 
 def sis_vol_average(file_name):
     import std_msgs.msg
