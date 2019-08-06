@@ -36,7 +36,7 @@ trxarray = []
 for att_v in att_vol:           #measure y-factor
     file_name = '/home/exito/data/logger/test/%s_attlevel = %s_data.db'%(args.save_name, str(att_v))
     save = '%s_attlevel = %s'%(args.save_name, str(att_v))
-    print("setting att")
+    print("setting att......please wait 60s")
     logger.start(file_name)
     loatt1.set_cur(att_v)
     time.sleep(60)
