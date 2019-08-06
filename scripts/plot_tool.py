@@ -50,7 +50,7 @@ def iv_plot(file_name, save_name):
 
     plt.suptitle(str(save_name))
     #plt.show()
-    graph_file_name = '/home/exito/data/logger/test/' + str(save_name) +'.png'
+    graph_file_name = '/home/exito/data/logger/test/' + str(save_name) +'iv_plot.png'
     plt.savefig(graph_file_name)
 
 
@@ -102,7 +102,7 @@ def att_iv_plot(file_name, save_name, att_vol):
 
     plt.suptitle('att_level = ' + str(att_vol))
     #plt.show()
-    graph_file_name = '/home/exito/data/logger/test/' + str(save_name) + '/fig_att_level=' + str(att_vol) +'.png'
+    graph_file_name = '/home/exito/data/logger/test/' + str(save_name) + '/fig_att_level=' + str(att_vol) +'iv_plot.png'
     plt.savefig(graph_file_name)
 
 def yfactor_prot(file_name, save_name):
@@ -135,8 +135,80 @@ def yfactor_prot(file_name, save_name):
     ax.set_ylabel('power (dBm)')
     ax.set_title('yfactor-measurement')
     ax.grid(True)
-    fig.savefig('/home/exito/data/logger/test/' + str(save_name) +'.png')
+    fig.savefig('/home/exito/data/logger/test/' + str(save_name) +'yfactor_plot.png')
     return trx
+
+def sis_bias_and_yfactor_matrix_plot(v1, v2, trx, save_name):
+    import matplotlib.pyplot as plt
+    import std_msgs.msg
+    import numpy
+    import necstdb
+    import exp_yfactor
+
+    X = v1
+    Y = v2
+    Z = trx
+
+    plt.pcolormesh(X, Y, Z, cmap='hsv')
+    pp=plt.colorbar (orientation="vertical") # カラーバーの表示
+    pp.set_label("Trx[K]") #カラーバーのラベル
+    plt.xlabel('SIS1_vol[mV]')
+    plt.ylabel('SIS2_vol[mV]')
+
+    plt.savefig('/home/exito/data/logger/test/' + str(save_name) +'yfactor_matrix.png')
+
+def sis_vol_average(filename):
+    import std_msgs.msg
+    import numpy
+    import necstdb
+
+    db = necstdb.necstdb()  #plot graph
+    db.open(file_name)
+
+    d = db.read_as_pandas()
+    d['time'] = pandas.to_datetime(d['time'], unit='s')
+    d['data'] = [_[0]['data'] for _ in d['msgs']]
+    d2 = d.set_index(['topic', 'time']).sort_index()
+
+    dd = pandas.concat(
+        [
+            d2.loc['/tz2019/sis_v1/v'][['data']].rename(columns={'data': 'V1V'}).astype(float).resample('0.1S').mean(),
+            d2.loc['/tz2019/sis_h1/v'][['data']].rename(columns={'data': 'H1V'}).astype(float).resample('0.1S').mean(),
+            d2.loc['/tz2019/sis_v2/v'][['data']].rename(columns={'data': 'V2V'}).astype(float).resample('0.1S').mean(),
+            d2.loc['/tz2019/sis_h2/v'][['data']].rename(columns={'data': 'H2V'}).astype(float).resample('0.1S').mean(),
+        ],
+        axis = 1,
+    )
+
+    v1v = numpy.mean(dd['V1V'])
+    h1v = numpy.mean(dd['H1V'])
+    v2v = numpy.mean(dd['V2V'])
+    h2v = numpy.mean(dd['H2V'])
+
+    average = [v1v, h1v, h2v, v2v]
+
+    return average
+
+def att_level_yfactor_plot(att_v, trx, save_name):
+    import matplotlib.pyplot as plt
+    import std_msgs.msg
+    import numpy
+    import necstdb
+    import exp_yfactor
+
+    fig = plt.figure(figsize=(8,4))
+    ax = fig.add_subplot(111)
+    ax.plot(att_v, trx, '.')
+    ax.set_xlabel('att_i[mA]')
+    ax.set_ylabel('Trx or Tsys [K]')
+    ax.set_title('att_level_yfactor_plot')
+    ax.grid(True)
+    fig.savefig('/home/exito/data/logger/test/' + str(save_name) +'att_level_trx_plot.png')
+
+
+
+
+
 
 #if __name__ == '__main__':
 #iv_plot(file_name, save_name)

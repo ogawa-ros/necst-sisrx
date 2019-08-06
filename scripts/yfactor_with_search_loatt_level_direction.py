@@ -31,6 +31,7 @@ parser.add_argument('save_name', type = str, help = 'set saving file name')
 args = parser.parse_args()
 
 att_vol = [23, 25, 27]    #search optimal Lo Att level
+att_v_array = []
 trxarray = []
 for att_v in att_vol:           #measure y-factor
     file_name = '/home/exito/data/logger/test/%s-%s.db'%(args.save_name, str(att_v))
@@ -42,8 +43,11 @@ for att_v in att_vol:           #measure y-factor
     time.sleep(60)
     logger.stop()
     trx = plot_tool.yfactor_prot(file_name, save)
-    trxarray = trxarray.append(trx)
+    att_v_array.append(att_v)
+    trxarray.append(trx)
     continue
+    plot_tool.att_level_yfactor_plot(att_v_array, trxarray, args.save_name)
+    
 loatt1.set_cur(30)
 time.sleep(60)
 loatt2.set_cur(30)
