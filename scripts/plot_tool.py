@@ -157,11 +157,12 @@ def sis_bias_and_yfactor_matrix_plot(trx, save_name):
         v = ((n*h*lofreq*vol)/e + 2.8*n)
         v1.append(v)
         v2.append(v)
+        continue
 
 
-    Y = v1
-    X = v2
-    Z = trx.reshape(5,5)
+    Y = numpy.array(v1)
+    X = numpy.array(v2)
+    Z = numpy.array(trx).reshape(5,5)
     print(str(X))
     print(str(Y))
     print(str(Z))
