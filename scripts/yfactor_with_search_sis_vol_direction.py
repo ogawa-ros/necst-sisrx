@@ -8,6 +8,7 @@ import time
 import std_msgs.msg
 import numpy as np
 import argparse
+import plot_tool
 
 sys.path.append("/home/exito/ros/src/necst-core/scripts")
 
