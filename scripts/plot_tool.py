@@ -162,15 +162,18 @@ def sis_bias_and_yfactor_matrix_plot(trx, save_name):
     Y = numpy.array(v1)
     X = numpy.array(v2)
     Z = numpy.array(trx).reshape(5,5)
+    print(str(X))
+    print(str(Y))
+    print(str(Z))
 
 
     plt.pcolormesh(X, Y, Z, cmap='hsv')
-    pp=plt.colorbar (orientation="vertical") # カラーバーの表示
-    pp.set_label("Trx[K]") #カラーバーのラベル
+    pp=plt.colorbar (orientation="vertical")
+    pp.set_label("Trx[K]")
     plt.xlabel('v2_vol[mV]')
     plt.ylabel('v1_vol[mV]')
 
-    plt.savefig('/home/exito/data/logger/test/' + str(save_name) +'yfactor_matrix.png')
+    plt.savefig('/home/exito/data/logger/test/' + str(save_name) +'/yfactor_matrix.png')
 
 def sis_vol_average(file_name):
     import std_msgs.msg
