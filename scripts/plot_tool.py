@@ -138,7 +138,7 @@ def yfactor_plot(file_name, save_name):
     fig.savefig('/home/exito/data/logger/test/' + str(save_name) +'_yfactor_plot.png')
     return trx
 
-def sis_bias_and_yfactor_matrix_plot(v1, v2, trx, save_name):
+def sis_bias_and_yfactor_matrix_plot(trx, save_name):
     import matplotlib.pyplot as plt
     import std_msgs.msg
     import numpy

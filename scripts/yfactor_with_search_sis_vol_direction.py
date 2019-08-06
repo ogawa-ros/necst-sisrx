@@ -75,5 +75,5 @@ for vp1 in volp1:             #measure y-factor
         continue
     continue
 
-plot_tool.sis_bias_and_yfactor_matrix_plot(v1array, v2array, trxarray, save)
+plot_tool.sis_bias_and_yfactor_matrix_plot(trxarray, save)
 sis.set_vgap(0)
