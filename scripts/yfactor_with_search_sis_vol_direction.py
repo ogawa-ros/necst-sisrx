@@ -49,7 +49,7 @@ for vp1 in volp1:             #measure y-factor
         file_name = '/home/exito/data/logger/test/%s.db'%(save)
 
         sis.set_vp2(vp2)
-        
+
         logger.start(file_name)
         time.sleep(10)
         trx = plot_tool.yfactor_prot(file_name, save)
@@ -59,7 +59,7 @@ for vp1 in volp1:             #measure y-factor
         if args.polarization == 'V':
             v1 = sis_v[0]
             v2 = sis_v[3]
-        elif:
+        if args.polarization == 'H':
             v1 = sis_v[1]
             v2 = sis_v[2]
 
