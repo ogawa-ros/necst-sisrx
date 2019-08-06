@@ -161,6 +161,7 @@ def sis_vol_average(file_name):
     import std_msgs.msg
     import numpy
     import necstdb
+    import pandas
 
     db = necstdb.necstdb()  #plot graph
     db.open(file_name)
