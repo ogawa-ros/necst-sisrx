@@ -46,16 +46,18 @@ for vp1 in volp1:             #measure y-factor
         vp1_s = ((n*h*lofreq*vp1)/e + 2.8*n)
         vp2_s = ((n*h*lofreq*vp2)/e + 2.8*n)
 
-        save = '%s_v1=%s[mV]_v2=%s_[mV]_%s-pol'%(args.save_name, str(vp1_s), str(vp2_s), args.polarization)
+        save = '%s/vp1=%s_vp2=%s_%s-pol'%(args.save_name, str(vp1), str(vp2), args.polarization)
         file_name = '/home/exito/data/logger/test/' + save + '.db'
         print(file_name)
+        print('--------------------')
 
         sis.set_vp2(vp2)
 
         logger.start(file_name)
         time.sleep(30)
-        trx = plot_tool.yfactor_plot(file_name, save)
         logger.stop()
+        trx = plot_tool.yfactor_plot(file_name, save)
+        print('Trx = ' + str(trx))
         sis_v = plot_tool.sis_vol_average(file_name)
 
         if args.polarization == 'V':
