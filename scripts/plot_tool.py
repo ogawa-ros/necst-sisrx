@@ -154,7 +154,7 @@ def sis_bias_and_yfactor_matrix_plot(v1, v2, trx, save_name):
         e = 1.602*10**(-19)
         lofreq = 92*10**9
         n = 3
-        v = ((n*h*lofreq*vp1)/e + 2.8*n)
+        v = ((n*h*lofreq*vol)/e + 2.8*n)
         v1.append(v)
         v2.append(v)
 
