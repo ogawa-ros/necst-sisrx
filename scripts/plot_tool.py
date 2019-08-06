@@ -145,15 +145,17 @@ def sis_bias_and_yfactor_matrix_plot(v1, v2, trx, save_name):
     import necstdb
     import exp_yfactor
 
-    X = v1
-    Y = v2
-    Z = trx
+
+    Y = numpy.array(v1)
+    Z = numpy.array(v2)
+    Z = numpy.array(trx).reshape(5,5)
+
 
     plt.pcolormesh(X, Y, Z, cmap='hsv')
     pp=plt.colorbar (orientation="vertical") # カラーバーの表示
     pp.set_label("Trx[K]") #カラーバーのラベル
-    plt.xlabel('SIS1_vol[mV]')
-    plt.ylabel('SIS2_vol[mV]')
+    plt.xlabel('v1_vol[mV]')
+    plt.ylabel('v2_vol[mV]')
 
     plt.savefig('/home/exito/data/logger/test/' + str(save_name) +'yfactor_matrix.png')
 
