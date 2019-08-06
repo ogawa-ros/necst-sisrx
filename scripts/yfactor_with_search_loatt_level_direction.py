@@ -44,7 +44,7 @@ for att_v in att_vol:           #measure y-factor
     print("att_level = %s"%(att_v))
     time.sleep(60)
     logger.stop()
-    trx = plot_tool.yfactor_prot(file_name, save)
+    trx = plot_tool.yfactor_plot(file_name, save)
     print("Trx = %s"%(trx))
     att_v_array.append(att_v)
     trxarray.append(trx)

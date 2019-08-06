@@ -105,7 +105,7 @@ def att_iv_plot(file_name, save_name, att_vol):
     graph_file_name = '/home/exito/data/logger/test/' + str(save_name) + '/fig_att_level=' + str(att_vol) +'iv_plot.png'
     plt.savefig(graph_file_name)
 
-def yfactor_prot(file_name, save_name):
+def yfactor_plot(file_name, save_name):
     import os, sys
     import matplotlib.pyplot as plt
     import std_msgs.msg

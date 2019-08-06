@@ -29,6 +29,6 @@ logger.start(file_name)
 time.sleep(30)
 logger.stop()
 
-trx = plot_tool.yfactor_prot(file_name, args.save_name)
+trx = plot_tool.yfactor_plot(file_name, args.save_name)
 
 print(str(trx))

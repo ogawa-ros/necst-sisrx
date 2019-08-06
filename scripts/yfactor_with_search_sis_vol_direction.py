@@ -53,8 +53,8 @@ for vp1 in volp1:             #measure y-factor
         sis.set_vp2(vp2)
 
         logger.start(file_name)
-        time.sleep(10)
-        trx = plot_tool.yfactor_prot(file_name, save)
+        time.sleep(30)
+        trx = plot_tool.yfactor_plot(file_name, save)
         logger.stop()
         sis_v = plot_tool.sis_vol_average(file_name)
 
