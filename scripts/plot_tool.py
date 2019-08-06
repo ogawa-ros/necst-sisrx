@@ -145,7 +145,7 @@ def sis_bias_and_yfactor_matrix_plot(v1, v2, trx, save_name):
     import necstdb
     import exp_yfactor
 
-    vp = np.linspace(-1, 0, 5)
+    vp = numpy.linspace(-1, 0, 5)
 
     v1 = []
     v2 = []
