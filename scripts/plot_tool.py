@@ -198,7 +198,7 @@ def att_level_yfactor_plot(att_v, trx, save_name):
 
     fig = plt.figure(figsize=(8,4))
     ax = fig.add_subplot(111)
-    ax.plot(att_v, trx, '.')
+    ax.plot(att_v, trx)
     ax.set_xlabel('att_i[mA]')
     ax.set_ylabel('Trx or Tsys [K]')
     ax.set_title('att_level_yfactor_plot')

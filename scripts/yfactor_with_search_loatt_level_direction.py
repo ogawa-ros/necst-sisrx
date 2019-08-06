@@ -41,18 +41,20 @@ for att_v in att_vol:           #measure y-factor
     time.sleep(60)
     loatt2.set_cur(att_v)
     print("att_level = %s"%(att_v))
-    time.sleep(10)
+    time.sleep(60)
     logger.stop()
     trx = plot_tool.yfactor_prot(file_name, save)
     print("Trx = %s"%(trx))
     att_v_array.append(att_v)
     trxarray.append(trx)
     continue
-    plot_tool.att_level_yfactor_plot(att_v_array, trxarray, args.save_name)
-    print("finish serach.....now seting loatt = 30")
+
+plot_tool.att_level_yfactor_plot(att_v_array, trxarray, args.save_name)
+print("finish serach.....now seting loatt = 30")
 
 loatt1.set_cur(30)
 time.sleep(60)
 loatt2.set_cur(30)
 
 print(str(trxarray))
+print(str(att_v_array))
