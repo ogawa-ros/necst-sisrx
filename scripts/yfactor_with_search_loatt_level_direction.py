@@ -36,6 +36,7 @@ trxarray = []
 for att_v in att_vol:           #measure y-factor
     file_name = '/home/exito/data/logger/test/%s_attlevel = %s_data.db'%(args.save_name, str(att_v))
     save = '%s_attlevel = %s'%(args.save_name, str(att_v))
+    print("setting att")
     logger.start(file_name)
     loatt1.set_cur(att_v)
     time.sleep(60)
@@ -50,7 +51,7 @@ for att_v in att_vol:           #measure y-factor
     continue
 
 plot_tool.att_level_yfactor_plot(att_v_array, trxarray, args.save_name)
-print("finish serach.....now seting loatt = 30")
+print("finish serach.....now setting loatt = 30")
 
 loatt1.set_cur(30)
 time.sleep(60)
