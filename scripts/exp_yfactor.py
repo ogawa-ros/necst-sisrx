@@ -71,7 +71,7 @@ def evaluate_trx_from_rotating_chopper_data(d, thot, tcold, smooth=3, cut=10, ns
     dcold = numpy.mean(dbot)
 
     tsys = yfactor_dB(dhot, dcold, thot, tcold)
-    return tsys, (dhot, dcold)
+    return tsys#, (dhot, dcold)
 
 def yfactor(dhot, dcold, thot, tcold):
     dhot = numpy.array(dhot)

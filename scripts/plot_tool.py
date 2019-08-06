@@ -135,7 +135,7 @@ def yfactor_prot(file_name, save_name):
     ax.set_ylabel('power (dBm)')
     ax.set_title('yfactor-measurement')
     ax.grid(True)
-    fig.savefig('/home/exito/data/logger/test/' + str(save_name) +'yfactor_plot.png')
+    fig.savefig('/home/exito/data/logger/test/' + str(save_name) +'_yfactor_plot.png')
     return trx
 
 def sis_bias_and_yfactor_matrix_plot(v1, v2, trx, save_name):
