@@ -168,13 +168,12 @@ def sis_bias_and_yfactor_matrix_plot(trx, save_name):
     print(str(Z))
 
 
-    plt.imshow(X, Y, Z, cmap='hsv')
+    plt.pcolormesh(X, Y, Z, cmap='hsv')
     pp=plt.colorbar (orientation="vertical")
     pp.set_label("Trx[K]")
     plt.xlabel('v2_vol[mV]')
     plt.ylabel('v1_vol[mV]')
     plt.set_title("yfactor_map")
-    #plt.show()
 
     plt.savefig('/home/exito/data/logger/test/' + str(save_name) + '/yfactor_matrix.png')
 
