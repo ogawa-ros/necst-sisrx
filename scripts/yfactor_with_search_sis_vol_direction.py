@@ -70,10 +70,11 @@ for vp1 in volp1:             #measure y-factor
             v2 = sis_v[2]
 
         trxarray.append(trx)
+        print("Trxarray = " + str(trxarray))
         #v1array.append(v1)
         #v2array.append(v2)
         continue
     continue
 
-plot_tool.sis_bias_and_yfactor_matrix_plot(trxarray, save)
+plot_tool.sis_bias_and_yfactor_matrix_plot(trxarray, args.save_name)
 sis.set_vgap(0)
