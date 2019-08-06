@@ -70,8 +70,8 @@ for vp1 in volp1:             #measure y-factor
             v2 = sis_v[2]
 
         trxarray.append(trx)
-        v1array.append(v1)
-        v2array.append(v2)
+        #v1array.append(v1)
+        #v2array.append(v2)
         continue
     continue
 
