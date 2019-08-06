@@ -159,9 +159,9 @@ def sis_bias_and_yfactor_matrix_plot(trx, save_name):
         v2.append(v)
 
 
-    Y = numpy.array(v1)
-    X = numpy.array(v2)
-    Z = numpy.array(trx).reshape(5,5)
+    Y = v1
+    X = v2
+    Z = trx.reshape(5,5)
     print(str(X))
     print(str(Y))
     print(str(Z))
@@ -172,8 +172,9 @@ def sis_bias_and_yfactor_matrix_plot(trx, save_name):
     pp.set_label("Trx[K]")
     plt.xlabel('v2_vol[mV]')
     plt.ylabel('v1_vol[mV]')
+    plt.title("yfactor_map")
 
-    plt.savefig('/home/exito/data/logger/test/' + str(save_name) +'/yfactor_matrix.png')
+    plt.savefig('/home/exito/data/logger/test/' + str(save_name) + '/yfactor_matrix.png')
 
 def sis_vol_average(file_name):
     import std_msgs.msg
