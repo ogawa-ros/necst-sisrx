@@ -46,8 +46,9 @@ for vp1 in volp1:             #measure y-factor
         vp1_s = ((n*h*lofreq*vp1)/e + 2.8*n)
         vp2_s = ((n*h*lofreq*vp2)/e + 2.8*n)
 
-        save = '%s_v1=%s_v2=%s_%s-pol'%(args.save_name, str(vp1_s), str(vp2_s),args.polarization)
-        file_name = '/home/exito/data/logger/test/%s.db'%(save)
+        save = '%s_v1=%s[mV]_v2=%s_[mV]_%s-pol'%(args.save_name, str(vp1_s), str(vp2_s), args.polarization)
+        file_name = '/home/exito/data/logger/test/' + save + '.db'
+        print(file_name)
 
         sis.set_vp2(vp2)
 
