@@ -48,8 +48,9 @@ for vp1 in volp1:             #measure y-factor
 
         save = '%s/vp1=%s_vp2=%s_%s-pol'%(args.save_name, str(vp1), str(vp2), args.polarization)
         file_name = '/home/exito/data/logger/test/' + save + '.db'
-        print(file_name)
         print('--------------------')
+        print(file_name)
+
 
         sis.set_vp2(vp2)
 
@@ -58,6 +59,7 @@ for vp1 in volp1:             #measure y-factor
         logger.stop()
         trx = plot_tool.yfactor_plot(file_name, save)
         print('Trx = ' + str(trx))
+        print('--------------------')
         sis_v = plot_tool.sis_vol_average(file_name)
 
         if args.polarization == 'V':
@@ -72,5 +74,6 @@ for vp1 in volp1:             #measure y-factor
         v2array.append(v2)
         continue
     continue
-    plot_tool.sis_bias_and_yfactor_matrix_plot(v1array, v2array, trxarray, save)
+
+plot_tool.sis_bias_and_yfactor_matrix_plot(v1array, v2array, trxarray, save)
 sis.set_vgap(0)
