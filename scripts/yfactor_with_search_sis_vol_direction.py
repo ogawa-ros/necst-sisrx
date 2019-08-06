@@ -55,7 +55,7 @@ for vp1 in volp1:             #measure y-factor
         sis.set_vp2(vp2)
 
         logger.start(file_name)
-        time.sleep(30)
+        time.sleep(10)
         logger.stop()
         trx = plot_tool.yfactor_plot(file_name, save)
         print('Trx = ' + str(trx))
