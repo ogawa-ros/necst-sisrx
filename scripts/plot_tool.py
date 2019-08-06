@@ -157,7 +157,7 @@ def sis_bias_and_yfactor_matrix_plot(v1, v2, trx, save_name):
 
     plt.savefig('/home/exito/data/logger/test/' + str(save_name) +'yfactor_matrix.png')
 
-def sis_vol_average(filename):
+def sis_vol_average(file_name):
     import std_msgs.msg
     import numpy
     import necstdb
