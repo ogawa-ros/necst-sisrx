@@ -130,6 +130,14 @@ def yfactor_plot(file_name, save_name):
         power = [i][0]
         trx = exp_yfactor.evaluate_trx_from_rotating_chopper_data(power, 300, 77)
         trxarray.append(trx)
+        fig = plt.figure(figsize=(8,4))
+        ax = fig.add_subplot(111)
+        ax.plot(power)
+        ax.set_xlabel('time')
+        ax.set_ylabel('power (dBm)')
+        ax.set_title('yfactor-measurement')
+        ax.grid(True)
+        fig.savefig('/home/exito/data/logger/test/' + str(save_name) +'/_'+str(i)'_yfactor_plot.png')
         continue
 
     print(trxarray)
