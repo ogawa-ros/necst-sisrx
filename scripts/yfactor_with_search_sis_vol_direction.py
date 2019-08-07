@@ -90,7 +90,7 @@ plt.xlim(-2, 9)
 plt.ylim(-2, 9)
 plt.grid()
 
-plt.savefig('/home/exito/data/logger/test/' + str(save_name) + '/yfactor_matrix.png')
+plt.savefig('/home/exito/data/logger/test/' + str(args.save_name) + '/yfactor_matrix.png')
 
 #plot_tool.sis_bias_and_yfactor_matrix_plot(v1array, v2array, trxarray, args.save_name)
 sis.set_vgap(0)
