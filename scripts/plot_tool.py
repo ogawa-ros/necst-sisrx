@@ -167,9 +167,9 @@ def sis_bias_and_yfactor_matrix_plot(v1, v2, trx, save_name):
     x = v1
     y = v2
     z = trx
-    print(str(x))
-    print(str(y))
-    print(str(z))
+    #print(str(x))
+    #print(str(y))
+    #print(str(z))
     np.save(
     '/home/exito/data/logger/test/'+str(save_name)+'/v1_data',
     x

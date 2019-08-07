@@ -65,11 +65,11 @@ for vp1 in volp1:             #measure y-factor
             v2 = sis_v[2]
 
         trxarray.append(trx)
-        print("Trxarray = " + str(trxarray))
+        #print("Trxarray = " + str(trxarray))
         v1array.append(v1)
         v2array.append(v2)
-        print("v1 = "+ str(v1array))
-        print("v2 = "+ str(v2array))
+        #print("v1 = "+ str(v1array))
+        #print("v2 = "+ str(v2array))
         continue
     continue
 
