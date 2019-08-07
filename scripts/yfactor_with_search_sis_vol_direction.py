@@ -75,7 +75,7 @@ x = v1array
 y = v2array
 z = trxarray
 np.save(
-'/home/exito/data/logger/test/'+str(save_name)+'/yfactor_map_data',
+'/home/exito/data/logger/test/'+str(args.save_name)+'/yfactor_map_data',
 x,y,z
 )
 
