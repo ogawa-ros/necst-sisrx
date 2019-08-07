@@ -189,8 +189,8 @@ def sis_bias_and_yfactor_matrix_plot(v1, v2, trx, save_name):
     plt.xlabel('v1_vol[mV]')
     plt.ylabel('v2_vol[mV]')
     plt.title("yfactor_map")
-    plt.xlim(-2, 9)
-    plt.ylim(-2, 9)
+    plt.xlim(6, 8.5)
+    plt.ylim(6, 8.5)
     plt.grid()
 
     plt.savefig('/home/exito/data/logger/test/' + str(save_name) + '/yfactor_matrix.png')
