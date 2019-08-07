@@ -179,7 +179,7 @@ def sis_bias_and_yfactor_matrix_plot(v1, v2, trx, save_name):
     x
     )
     np.save(
-    '/home/exito/data/logger/test/'+str(args.save_name)+'/trx_data',
+    '/home/exito/data/logger/test/'+str(save_name)+'/trx_data',
     z
     )
 
