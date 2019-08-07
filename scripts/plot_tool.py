@@ -126,7 +126,7 @@ def yfactor_plot(file_name, save_name):
 
     p = numpy.array(sadata)
     plen = range(len(p))
-    #for i in plen:
+    for i in plen:
         power = p[i][0]
         trx = exp_yfactor.evaluate_trx_from_rotating_chopper_data(power, 300, 77)
         trxarray.append(trx)
