@@ -172,7 +172,7 @@ def sis_bias_and_yfactor_matrix_plot(v1, v2, trx, save_name):
     print(str(z))
 
 
-    plt.scatter(x, y, z)
+    plt.scatter(x, y, c=z)
     pp=plt.colorbar (orientation="vertical")
     pp.set_label("Trx[K]")
     plt.xlabel('v1_vol[mV]')
