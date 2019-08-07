@@ -113,6 +113,7 @@ def yfactor_plot(file_name, save_name):
     import numpy
     import necstdb
     import exp_yfactor
+    from statistics import mean,stdev
     db = necstdb.necstdb()  #plot graph
     db.open(file_name)
 
@@ -124,7 +125,7 @@ def yfactor_plot(file_name, save_name):
     trxarray = []
 
     p = numpy.array(sadata)
-    plen = len(p)
+    plen = range(len(p))
     for i in plen:
         power = [i][0]
         trx = exp_yfactor.evaluate_trx_from_rotating_chopper_data(power, 300, 77)
