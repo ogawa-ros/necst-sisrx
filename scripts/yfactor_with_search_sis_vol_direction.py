@@ -71,5 +71,26 @@ for vp1 in volp1:             #measure y-factor
         continue
     continue
 
-plot_tool.sis_bias_and_yfactor_matrix_plot(v1array, v2array, trxarray, args.save_name)
+x = v1array
+y = v2array
+z = trxarray
+np.save(
+'/home/exito/data/logger/test/'+str(save_name)+'/yfactor_map_data',
+x,y,z
+)
+
+
+plt.scatter(x, y, c=z)
+pp=plt.colorbar (orientation="vertical")
+pp.set_label("Trx[K]")
+plt.xlabel('v1_vol[mV]')
+plt.ylabel('v2_vol[mV]')
+plt.title("yfactor_map")
+plt.xlim(-2, 9)
+plt.ylim(-2, 9)
+plt.grid()
+
+plt.savefig('/home/exito/data/logger/test/' + str(save_name) + '/yfactor_matrix.png')
+
+#plot_tool.sis_bias_and_yfactor_matrix_plot(v1array, v2array, trxarray, args.save_name)
 sis.set_vgap(0)
