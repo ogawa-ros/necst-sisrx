@@ -164,9 +164,9 @@ def sis_bias_and_yfactor_matrix_plot(v1, v2, trx, save_name):
     #X = numpy.array(v2)
     #Z = numpy.array(trx).reshape(5,5)
 
-    x = v1
-    y = v2
-    z = trx
+    x = numpy.array(v1)
+    y = numpy.array(v2)
+    z = numpy.array(trx)
     print(str(x))
     print(str(y))
     print(str(z))
