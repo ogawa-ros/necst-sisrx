@@ -120,13 +120,20 @@ def yfactor_plot(file_name, save_name):
     d['time'] = pandas.to_datetime(d['time'], unit='s')
     d['data'] = [_[0]['data'] for _ in d['msgs']]
     d2 = d.set_index(['topic', 'time']).sort_index()
+    sadata = d2.loc['/dev/n9343c/ip_192_168_100_185/spec'][['data']]
+    trxarray = []
 
+    p = numpy.array(sadata)
+    for power in p:
+        trx = exp_yfactor.evaluate_trx_from_rotating_chopper_data(power, 300, 77)
+        trxarray.append(trx)
+        continue
 
-    spdata = d2.loc['/dev/n9343c/ip_192_168_100_185/spec'][['data']]
-
-    p = numpy.array(spdata)
-    power = p[30][0]
-    trx = exp_yfactor.evaluate_trx_from_rotating_chopper_data(power, 300, 77)
+    print(trxarray)
+    trxave = mean(trxarray)
+    stdev = stdev(trxarray)
+    print("trxave = "+ str(trxave))
+    print("stdev = "+ str(stdev))
 
     fig = plt.figure(figsize=(8,4))
     ax = fig.add_subplot(111)
