@@ -26,7 +26,7 @@ args = parser.parse_args()
 
 file_name = '/home/exito/data/logger/test/%s.db'%(args.save_name)
 logger.start(file_name)
-time.sleep(30)
+time.sleep(10)
 logger.stop()
 
 trx = plot_tool.yfactor_plot(file_name, args.save_name)
