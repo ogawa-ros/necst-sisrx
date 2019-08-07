@@ -39,13 +39,6 @@ for vp1 in volp1:             #measure y-factor
     for vp2 in volp2:
         sis_v = []
 
-        h = 6.626*10**(-34)
-        e = 1.602*10**(-19)
-        lofreq = 92*10**9
-        n = 3
-        vp1_s = ((n*h*lofreq*vp1)/e + 2.8*n)
-        vp2_s = ((n*h*lofreq*vp2)/e + 2.8*n)
-
         save = '%s/vp1=%s_vp2=%s_%s-pol'%(args.save_name, str(vp1), str(vp2), args.polarization)
         file_name = '/home/exito/data/logger/test/' + save + '.db'
         print('--------------------')
@@ -71,10 +64,12 @@ for vp1 in volp1:             #measure y-factor
 
         trxarray.append(trx)
         print("Trxarray = " + str(trxarray))
-        #v1array.append(v1)
-        #v2array.append(v2)
+        v1array.append(v1)
+        v2array.append(v2)
+        print("v1 = "+ str(v1))
+        print("v2 = "+ str(v2))
         continue
     continue
 
-plot_tool.sis_bias_and_yfactor_matrix_plot(trxarray, args.save_name)
+plot_tool.sis_bias_and_yfactor_matrix_plot(v1array, v2array, trxarray, args.save_name)
 sis.set_vgap(0)

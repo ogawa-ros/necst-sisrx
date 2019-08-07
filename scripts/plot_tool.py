@@ -138,42 +138,47 @@ def yfactor_plot(file_name, save_name):
     fig.savefig('/home/exito/data/logger/test/' + str(save_name) +'_yfactor_plot.png')
     return trx
 
-def sis_bias_and_yfactor_matrix_plot(trx, save_name):
+def sis_bias_and_yfactor_matrix_plot(v1, v2, trx, save_name):
     import matplotlib.pyplot as plt
     import std_msgs.msg
     import numpy
     import necstdb
     import exp_yfactor
 
-    vp = numpy.linspace(-1, 0, 5)
+    #vp = numpy.linspace(-1, 0, 5)
 
-    v1 = []
-    v2 = []
-    for vol in vp:
-        h = 6.626*10**(-34)
-        e = 1.602*10**(-19)
-        lofreq = 92*10**9
-        n = 3
-        v = ((n*h*lofreq*vol)/e + 2.8*n)
-        v1.append(v)
-        v2.append(v)
-        continue
-
-
-    Y = numpy.array(v1)
-    X = numpy.array(v2)
-    Z = numpy.array(trx).reshape(5,5)
-    print(str(X))
-    print(str(Y))
-    print(str(Z))
+    #v1 = []
+    #v2 = []
+    #for vol in vp:
+    #    h = 6.626*10**(-34)
+    #    e = 1.602*10**(-19)
+    #    lofreq = 92*10**9
+    #    n = 3
+    #    v = ((n*h*lofreq*vol)/e + 2.8*n)
+    #    v1.append(v)
+    #    v2.append(v)
+    #    continue
 
 
-    plt.pcolormesh(X, Y, Z, cmap='hsv')
+    #Y = numpy.array(v1)
+    #X = numpy.array(v2)
+    #Z = numpy.array(trx).reshape(5,5)
+
+    x = v1
+    y = v2
+    z = trx
+    print(str(x))
+    print(str(y))
+    print(str(z))
+
+
+    plt.scatter(x, y, z)
     pp=plt.colorbar (orientation="vertical")
     pp.set_label("Trx[K]")
-    plt.xlabel('v2_vol[mV]')
-    plt.ylabel('v1_vol[mV]')
+    plt.xlabel('v1_vol[mV]')
+    plt.ylabel('v2_vol[mV]')
     plt.title("yfactor_map")
+    plt.grid()
 
     plt.savefig('/home/exito/data/logger/test/' + str(save_name) + '/yfactor_matrix.png')
 
