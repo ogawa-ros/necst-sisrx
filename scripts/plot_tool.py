@@ -141,7 +141,7 @@ def yfactor_plot(file_name, save_name):
 def sis_bias_and_yfactor_matrix_plot(v1, v2, trx, save_name):
     import matplotlib.pyplot as plt
     import std_msgs.msg
-    import numpy
+    import numpy as np
     import necstdb
     import exp_yfactor
 
