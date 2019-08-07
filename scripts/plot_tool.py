@@ -242,7 +242,7 @@ def att_level_yfactor_plot(att_v, trx, save_name):
     ax.set_ylabel('Trx or Tsys [K]')
     ax.set_title('att_level_yfactor_plot')
     ax.grid(True)
-    fig.savefig('/home/exito/data/logger/test/' + str(save_name) +'att_level_trx_plot.png')
+    fig.savefig('/home/exito/data/logger/test/' + str(save_name) +'/att_level_trx_plot.png')
 
 
 
