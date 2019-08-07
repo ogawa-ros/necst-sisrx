@@ -47,6 +47,7 @@ for vp1 in volp1:             #measure y-factor
 
 
         sis.set_vp2(vp2)
+        time.sleep(2)
 
         logger.start(file_name)
         time.sleep(10)
