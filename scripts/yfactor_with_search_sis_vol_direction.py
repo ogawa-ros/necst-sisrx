@@ -67,6 +67,8 @@ for vp1 in volp1:             #measure y-factor
         print("Trxarray = " + str(trxarray))
         v1array.append(v1)
         v2array.append(v2)
+        print("v1 = "+ str(v1array))
+        print("v2 = "+ str(v2array))
         continue
     continue
 
