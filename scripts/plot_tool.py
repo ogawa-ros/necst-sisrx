@@ -171,10 +171,17 @@ def sis_bias_and_yfactor_matrix_plot(v1, v2, trx, save_name):
     print(str(y))
     print(str(z))
     np.save(
-    '/home/exito/data/logger/test/'+str(save_name)+'/yfactor_map_data',
-    x,y,z  
+    '/home/exito/data/logger/test/'+str(save_name)+'/v1_data',
+    x
     )
-
+    np.save(
+    '/home/exito/data/logger/test/'+str(save_name)+'/v2_data',
+    x
+    )
+    np.save(
+    '/home/exito/data/logger/test/'+str(args.save_name)+'/trx_data',
+    z
+    )
 
     plt.scatter(x, y, c=z)
     pp=plt.colorbar (orientation="vertical")

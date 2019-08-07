@@ -67,31 +67,8 @@ for vp1 in volp1:             #measure y-factor
         print("Trxarray = " + str(trxarray))
         v1array.append(v1)
         v2array.append(v2)
-        print("v1 = "+ str(v1array))
-        print("v2 = "+ str(v2array))
         continue
     continue
 
-x = v1array
-y = v2array
-z = trxarray
-np.save(
-'/home/exito/data/logger/test/'+str(args.save_name)+'/yfactor_map_data',
-x,y,z
-)
-
-
-plt.scatter(x, y, c=z)
-pp=plt.colorbar (orientation="vertical")
-pp.set_label("Trx[K]")
-plt.xlabel('v1_vol[mV]')
-plt.ylabel('v2_vol[mV]')
-plt.title("yfactor_map")
-plt.xlim(-0.5, 8.5)
-plt.ylim(-0.5, 8.5)
-plt.grid()
-
-plt.savefig('/home/exito/data/logger/test/' + str(args.save_name) + '/yfactor_matrix.png')
-
-#plot_tool.sis_bias_and_yfactor_matrix_plot(v1array, v2array, trxarray, args.save_name)
+plot_tool.sis_bias_and_yfactor_matrix_plot(v1array, v2array, trxarray, args.save_name)
 sis.set_vgap(0)
