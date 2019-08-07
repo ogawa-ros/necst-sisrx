@@ -146,15 +146,7 @@ def yfactor_plot(file_name, save_name):
     print("trxave = "+ str(trxave))
     print("stdev = "+ str(stdev))
 
-    fig = plt.figure(figsize=(8,4))
-    ax = fig.add_subplot(111)
-    ax.plot(power)
-    ax.set_xlabel('time')
-    ax.set_ylabel('power (dBm)')
-    ax.set_title('yfactor-measurement')
-    ax.grid(True)
-    fig.savefig('/home/exito/data/logger/test/' + str(save_name) +'_yfactor_plot.png')
-    return trx
+    return trxave
 
 def sis_bias_and_yfactor_matrix_plot(v1, v2, trx, save_name):
     import matplotlib.pyplot as plt
