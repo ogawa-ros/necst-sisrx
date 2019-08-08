@@ -33,7 +33,7 @@ parser.add_argument('step', type = int, help = 'set step att_level')
 args = parser.parse_args()
 
 thot = float(input("thot:"))
-tcold = float(input("tcold"))
+tcold = float(input("tcold:"))
 
 att_vol = range(args.start, args.stop, args.step)    #search optimal Lo Att level
 att_v_array = []
