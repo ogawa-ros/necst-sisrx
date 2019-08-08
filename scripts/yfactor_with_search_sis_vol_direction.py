@@ -44,7 +44,7 @@ for vp1 in volp1:             #measure y-factor
         sis_v = []
 
         save = '%s/vp1=%s_vp2=%s_%s-pol'%(args.save_name, str(vp1), str(vp2), args.polarization)
-        file_name = '/home/exito/data/logger/test/' + save + '.db'
+        file_name = '/home/exito/data/logger/test/' + save + '/rawdata.db'
         print('--------------------')
         print(file_name)
 
@@ -55,7 +55,7 @@ for vp1 in volp1:             #measure y-factor
         logger.start(file_name)
         time.sleep(10)
         logger.stop()
-        trx = plot_tool.yfactor_plot(file_name, save, thot, tcold)
+        trx = plot_tool.yfactor_cal(file_name, thot, tcold)
         print('Trx = ' + str(trx))
         print('--------------------')
         sis_v = plot_tool.sis_vol_average(file_name)

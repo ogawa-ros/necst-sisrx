@@ -148,7 +148,7 @@ def yfactor_plot(file_name, save_name, thot, tcold):
 
     return trxave
 
-def yfactor_cal(file_name, save_name, thot, tcold):
+def yfactor_cal(file_name, thot, tcold):
     import os, sys
     import matplotlib.pyplot as plt
     import std_msgs.msg
