@@ -39,10 +39,11 @@ for att_v in att_vol:           #measure y-factor
     file_name = '/home/exito/data/logger/test/%s/attlevel = %s_data/rawdata.db'%(args.save_name, str(att_v))
     save = '%s_attlevel = %s'%(args.save_name, str(att_v))
     print("setting att......please wait 60s")
-    logger.start(file_name)
+
     loatt1.set_cur(att_v)
     time.sleep(60)
     loatt2.set_cur(att_v)
+    logger.start(file_name)
     print("att_level = %s"%(att_v))
     time.sleep(60)
     logger.stop()
