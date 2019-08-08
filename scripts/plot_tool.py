@@ -140,7 +140,7 @@ def yfactor_plot(file_name, save_name, thot, tcold):
         fig.savefig('/home/exito/data/logger/test/' + str(save_name) +'/'+str(i)+'_yfactor_plot.png')
         continue
 
-    print(trxarray)
+    #print(trxarray)
     trxave = mean(trxarray)
     stdev = stdev(trxarray)
     print("trxave = "+ str(trxave))
