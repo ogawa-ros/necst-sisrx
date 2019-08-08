@@ -7,6 +7,7 @@ import rospy
 import time
 import std_msgs.msg
 import argparse
+import numpy as np
 
 sys.path.append("/home/exito/ros/src/necst-core/scripts")
 import core_controller
