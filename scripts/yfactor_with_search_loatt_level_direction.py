@@ -52,7 +52,7 @@ for att_v in att_vol:           #measure y-factor
     logger.start(file_name)
     time.sleep(10)
     logger.stop()
-    trx = plot_tool.yfactor_cal(file_name, save, thot, tcold)
+    trx = plot_tool.yfactor_cal(file_name, thot, tcold)
     print("Trx = %s"%(trx))
     att_v_array.append(att_v)
     trxarray.append(trx)
