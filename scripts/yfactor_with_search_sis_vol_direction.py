@@ -44,7 +44,7 @@ for vp1 in volp1:             #measure y-factor
         sis_v = []
 
         save = '%s/vp1=%s_vp2=%s_%s-pol'%(args.save_name, str(vp1), str(vp2), args.polarization)
-        file_name = '/home/exito/data/logger/test/' + save + '/rawdata.db'
+        file_name = '/home/exito/data/logger/test/' + save + '.db'
         print('--------------------')
         print(file_name)
 
