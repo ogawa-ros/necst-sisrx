@@ -26,6 +26,9 @@ parser = argparse.ArgumentParser(description = 'search optical sis voltage value
 parser.add_argument('save_name', type = str, help = 'set saving file name')
 parser.add_argument('polarization', choices = ['V', 'H'], help = 'choice polarization V or H')
 
+thot = float(input("thot[K]:"))
+tcold = float(input("tcold[K]:"))
+
 args = parser.parse_args()
 
 volp1 = np.linspace(-2, 0, 5)   #search optimal SIS voltage value
@@ -52,7 +55,7 @@ for vp1 in volp1:             #measure y-factor
         logger.start(file_name)
         time.sleep(10)
         logger.stop()
-        trx = plot_tool.yfactor_plot(file_name, save)
+        trx = plot_tool.yfactor_plot(file_name, save, thot, tcold)
         print('Trx = ' + str(trx))
         print('--------------------')
         sis_v = plot_tool.sis_vol_average(file_name)
