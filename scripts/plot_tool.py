@@ -105,7 +105,7 @@ def att_iv_plot(file_name, save_name, att_vol):
     graph_file_name = '/home/exito/data/logger/test/' + str(save_name) + '/fig_att_level=' + str(att_vol) +'iv_plot.png'
     plt.savefig(graph_file_name)
 
-def yfactor_plot(file_name, save_name):
+def yfactor_plot(file_name, save_name, thot, tcold):
     import os, sys
     import matplotlib.pyplot as plt
     import std_msgs.msg
@@ -128,7 +128,7 @@ def yfactor_plot(file_name, save_name):
     plen = range(len(p))
     for i in plen:
         power = p[i][0]
-        trx = exp_yfactor.evaluate_trx_from_rotating_chopper_data(power, 300, 77)
+        trx = exp_yfactor.evaluate_trx_from_rotating_chopper_data(power, thot, tcold)
         trxarray.append(trx)
         fig = plt.figure(figsize=(8,4))
         ax = fig.add_subplot(111)
@@ -141,6 +141,49 @@ def yfactor_plot(file_name, save_name):
         continue
 
     print(trxarray)
+    trxave = mean(trxarray)
+    stdev = stdev(trxarray)
+    print("trxave = "+ str(trxave))
+    print("stdev = "+ str(stdev))
+
+    return trxave
+
+def yfactor_cal(file_name, save_name, thot, tcold):
+    import os, sys
+    import matplotlib.pyplot as plt
+    import std_msgs.msg
+    import pandas
+    import numpy
+    import necstdb
+    import exp_yfactor
+    from statistics import mean,stdev
+    db = necstdb.necstdb()  #plot graph
+    db.open(file_name)
+
+    d = db.read_as_pandas()
+    d['time'] = pandas.to_datetime(d['time'], unit='s')
+    d['data'] = [_[0]['data'] for _ in d['msgs']]
+    d2 = d.set_index(['topic', 'time']).sort_index()
+    sadata = d2.loc['/dev/n9343c/ip_192_168_100_185/spec'][['data']]
+    trxarray = []
+
+    p = numpy.array(sadata)
+    plen = range(len(p))
+    for i in plen:
+        power = p[i][0]
+        trx = exp_yfactor.evaluate_trx_from_rotating_chopper_data(power, thot, tcold)
+        trxarray.append(trx)
+        fig = plt.figure(figsize=(8,4))
+        ax = fig.add_subplot(111)
+        ax.plot(power)
+        ax.set_xlabel('time')
+        ax.set_ylabel('power (dBm)')
+        ax.set_title('yfactor-measurement')
+        ax.grid(True)
+        #fig.savefig('/home/exito/data/logger/test/' + str(save_name) +'/'+str(i)+'_yfactor_plot.png')
+        continue
+
+    #print(trxarray)
     trxave = mean(trxarray)
     stdev = stdev(trxarray)
     print("trxave = "+ str(trxave))

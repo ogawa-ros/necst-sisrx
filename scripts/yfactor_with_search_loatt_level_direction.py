@@ -32,6 +32,9 @@ parser.add_argument('stop', type = int, help = 'set stop att_level')
 parser.add_argument('step', type = int, help = 'set step att_level')
 args = parser.parse_args()
 
+thot = float(input("thot:"))
+tcold = float(input("tcold"))
+
 att_vol = range(args.start, args.stop, args.step)    #search optimal Lo Att level
 att_v_array = []
 trxarray = []
@@ -48,7 +51,7 @@ for att_v in att_vol:           #measure y-factor
     print("now measurement yfactor")
     time.sleep(60)
     logger.stop()
-    trx = plot_tool.yfactor_plot(file_name, save)
+    trx = plot_tool.yfactor_cal(file_name, save, thot, tcold)
     print("Trx = %s"%(trx))
     att_v_array.append(att_v)
     trxarray.append(trx)
