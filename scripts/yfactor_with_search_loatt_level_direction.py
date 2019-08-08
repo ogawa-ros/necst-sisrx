@@ -36,7 +36,7 @@ att_vol = range(args.start, args.stop, args.step)    #search optimal Lo Att leve
 att_v_array = []
 trxarray = []
 for att_v in att_vol:           #measure y-factor
-    file_name = '/home/exito/data/logger/test/%s/attlevel = %s_data.db'%(args.save_name, str(att_v))
+    file_name = '/home/exito/data/logger/test/%s/attlevel = %s_data/rawdata.db'%(args.save_name, str(att_v))
     save = '%s_attlevel = %s'%(args.save_name, str(att_v))
     print("setting att......please wait 60s")
     logger.start(file_name)
