@@ -57,7 +57,7 @@ for att_v in att_vol:           #measure y-factor
     trxarray.append(trx)
     continue
 
-plot_tool.att_level_yfactor_plot(att_v_array, trxarray, save)
+plot_tool.att_level_yfactor_plot(att_v_array, trxarray, args.save_name)
 print("finish serach.....now setting loatt = 30")
 
 loatt1.set_cur(30)
