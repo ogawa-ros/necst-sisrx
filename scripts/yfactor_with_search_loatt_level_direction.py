@@ -27,10 +27,12 @@ logger = core_controller.logger()
 parser = argparse.ArgumentParser(description = 'search optical Lo Att voltage value')
 
 parser.add_argument('save_name', type = str, help = 'set saving file name')
-
+parser.add_argument('start', type = float, help = 'set start att_level')
+parser.add_argument('stop', type = float, help = 'set stop att_level')
+parser.add_argument('step', type = float, help = 'set step att_level')
 args = parser.parse_args()
 
-att_vol = [23, 25, 27]    #search optimal Lo Att level
+att_vol = range(args.start, args.stop, args.step)    #search optimal Lo Att level
 att_v_array = []
 trxarray = []
 for att_v in att_vol:           #measure y-factor
