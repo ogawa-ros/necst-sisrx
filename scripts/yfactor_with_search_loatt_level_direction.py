@@ -35,7 +35,7 @@ args = parser.parse_args()
 thot = float(input("thot[K]:"))
 tcold = float(input("tcold[K]:"))
 
-att_vol = range(args.start, args.stop, args.step)    #search optimal Lo Att level
+att_vol = list(range(args.start, args.stop, args.step))   #search optimal Lo Att level
 att_v_array = []
 trxarray = []
 for att_v in att_vol:           #measure y-factor
