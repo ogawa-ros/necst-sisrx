@@ -66,7 +66,7 @@ time.sleep(60)
 loatt2.set_cur(30)
 print("please wait 60s")
 time.sleep(60)
-print(setting finished)
+print('setting finished')
 
 print(str(trxarray))
 print(str(att_v_array))
