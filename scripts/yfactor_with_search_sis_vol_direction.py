@@ -77,7 +77,13 @@ for vp1 in volp1:             #measure y-factor
     continue
 
 plot_tool.sis_bias_and_yfactor_matrix_plot(v1array, v2array, trxarray, args.save_name)
-print('v1 = ' + str(v1array))
-print('v2 = ' + str(v2array))
-print('trx or tsys = ' + str(trxarray))
+trxarray = np.reshape(trxarray, (5,5))
+v1array = np.reshape(v1array, (5,5))
+v2array = np.reshape(v2array, (5,5))
+print('v1 = ')
+print(str(v1array))
+print('v2 = ')
+print(str(v2array))
+print('trx or tsys = ')
+print( str(trxarray))
 sis.set_vgap(0)
