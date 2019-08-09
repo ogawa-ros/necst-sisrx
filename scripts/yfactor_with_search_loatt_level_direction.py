@@ -60,10 +60,13 @@ for att_v in att_vol:           #measure y-factor
 
 plot_tool.att_level_yfactor_plot(att_v_array, trxarray, args.save_name)
 print("finish serach.....now setting loatt = 30")
-
+print("please wait 120s ")
 loatt1.set_cur(30)
 time.sleep(60)
 loatt2.set_cur(30)
+print("please wait 60s")
+time.sleep(60)
+print(setting finished)
 
 print(str(trxarray))
 print(str(att_v_array))
