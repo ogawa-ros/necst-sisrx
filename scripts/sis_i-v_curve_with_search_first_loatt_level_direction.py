@@ -57,7 +57,7 @@ for att_vol in att:
     #time.sleep(60)
     logger.stop()
     sis.set_vgap(0)
-    plot_tool.att_iv_plot(file_name, args.save_name, att_vol)
+    #plot_tool.att_iv_plot(file_name, args.save_name, att_vol)
     print('I-V masurement finished')
 
     continue
