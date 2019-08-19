@@ -12,15 +12,13 @@ import necstdb
 import pandas
 import matplotlib.pyplot as plt
 
-sys.path.append("/home/exito/ros/src/necst-core/scripts")
-sys.path.append("/home/exito/ros/src/necst-tz2019/scripts")
+sys.path.append("/home/hinotoritz/ros/src/necst-core/scripts")
+sys.path.append("/home/hinotoritz/ros/src/necst-tz2019/scripts")
 
 import controller
 import core_controller
 import tz2019_controller
 
-sys.path.append("/home/exito/ros/src/necst-tz2019/scripts")
-import plot_tool
 
 rospy.init_node(name)
 
@@ -41,7 +39,8 @@ att = [17, 20, 25, 30]
 att = att[::-1]          #search Lo Att level when Parameter Search
 
 for att_vol in att:
-    file_name = '/home/exito/data/logger/test/%s/att_level=%d_data.db'%(args.save_name, att_vol)
+    date = datetime.datetime.today().strftime('%Y%m%d')
+    file_name = '/home/hinotoritz/data/evaluation/' + date +' /%s/att_level=%d_data'%(args.save_name, att_vol)
     print(file_name)
     print('Please wait. seting att_level now!!' )
     logger.start(file_name)             #measure I-V curve
