@@ -10,8 +10,8 @@ import numpy
 import argparse
 import plot_tool
 
-sys.path.append("/home/exito/ros/src/necst-core/scripts")
-sys.path.append("/home/exito/ros/src/necst-tz2019/scripts")
+sys.path.append("/home/hinotoritz/ros/src/necst-core/scripts")
+sys.path.append("/home/hinotoritz/ros/src/necst-tz2019/scripts")
 
 import controller
 import core_controller
@@ -39,7 +39,8 @@ att_vol = list(range(args.start, args.stop, args.step))   #search optimal Lo Att
 att_v_array = []
 trxarray = []
 for att_v in att_vol:           #measure y-factor
-    file_name = '/home/exito/data/logger/test/%s/attlevel = %s_data/rawdata.db'%(args.save_name, str(att_v))
+    date = datetime.datetime.today().strftime('%Y%m%d')
+    file_name = '/home/hinotoritz/data/evaluation/' + date + '/%s/attlevel = %s_data/rawdata.db'%(args.save_name, str(att_v))
     save = '%s/attlevel = %s_data'%(args.save_name, str(att_v))
     print("setting att......please wait 60s")
 
@@ -58,7 +59,7 @@ for att_v in att_vol:           #measure y-factor
     trxarray.append(trx)
     continue
 
-plot_tool.att_level_yfactor_plot(att_v_array, trxarray, args.save_name)
+#plot_tool.att_level_yfactor_plot(att_v_array, trxarray, args.save_name)
 print("finish serach.....now setting loatt = 30")
 print("please wait 120s ")
 loatt1.set_cur(30)

@@ -6,12 +6,12 @@ import sys
 import rospy
 import time
 import std_msgs.msg
-import numpy as np
+import numpy
 import argparse
 import plot_tool
 import matplotlib.pyplot as plt
 
-sys.path.append("/home/exito/ros/src/necst-core/scripts")
+sys.path.append("/home/hinotoritz/ros/src/necst-core/scripts")
 
 import controller
 import core_controller
@@ -44,7 +44,8 @@ for vp1 in volp1:             #measure y-factor
         sis_v = []
 
         save = '%s/vp1=%s_vp2=%s_%s-pol'%(args.save_name, str(vp1), str(vp2), args.polarization)
-        file_name = '/home/exito/data/logger/test/' + save + '.db'
+        date = datetime.datetime.today().strftime('%Y%m%d')
+        file_name = '/home/hinotoritz/data/evaluation/' + date + '/'+ save
         print('--------------------')
         print(file_name)
 
@@ -76,10 +77,10 @@ for vp1 in volp1:             #measure y-factor
         continue
     continue
 
-plot_tool.sis_bias_and_yfactor_matrix_plot(v1array, v2array, trxarray, args.save_name)
-trxarray = np.reshape(trxarray, (5,5))
-v1array = np.reshape(v1array, (5,5))
-v2array = np.reshape(v2array, (5,5))
+#plot_tool.sis_bias_and_yfactor_matrix_plot(v1array, v2array, trxarray, args.save_name)
+trxarray = numpy.reshape(trxarray, (5,5))
+v1array = numpy.reshape(v1array, (5,5))
+v2array = numpy.reshape(v2array, (5,5))
 print('v1 = ')
 print(str(v1array))
 print('v2 = ')
