@@ -10,11 +10,11 @@ import std_msgs.msg
 import numpy
 import argparse
 
-sys.path.append("/home/exito/ros/src/necst-core/scripts")
+sys.path.append("/home/hinotoritz/ros/src/necst-core/scripts")
 import controller
 import core_controller
 
-sys.path.append("/home/exito/ros/src/necst-tz2019/scripts")
+sys.path.append("/home/hinotoritz/ros/src/necst-tz2019/scripts")
 import plot_tool
 
 
@@ -29,7 +29,7 @@ parser.add_argument('save_name', type = str, help = 'set saving file name')
 
 args = parser.parse_args()
 
-date = datetime.datetime.today().strftime('%Y%m%d') 
+date = datetime.datetime.today().strftime('%Y%m%d')
 file_name = '/data/evaluation/' + date +' /sis_iv/%s'%(args.save_name)
 print(file_name)
 logger.start(file_name)
