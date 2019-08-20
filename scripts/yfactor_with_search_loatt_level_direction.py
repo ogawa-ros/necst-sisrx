@@ -32,15 +32,15 @@ parser.add_argument('stop', type = int, help = 'set stop att_level')
 parser.add_argument('step', type = int, help = 'set step att_level')
 args = parser.parse_args()
 
-thot = float(input("thot[K]:"))
-tcold = float(input("tcold[K]:"))
+#thot = float(input("thot[K]:"))
+#tcold = float(input("tcold[K]:"))
 
 att_vol = list(range(args.start, args.stop, args.step))   #search optimal Lo Att level
 att_v_array = []
 trxarray = []
 for att_v in att_vol:           #measure y-factor
     date = datetime.datetime.today().strftime('%Y%m%d')
-    file_name = '/home/hinotoritz/data/evaluation/' + date + '/%s/attlevel = %s_data/rawdata.db'%(args.save_name, str(att_v))
+    file_name = '/home/hinotoritz/data/evaluation/' + date + '/%s/attlevel = %s_data'%(args.save_name, str(att_v))
     save = '%s/attlevel = %s_data'%(args.save_name, str(att_v))
     print("setting att......please wait 60s")
 
@@ -53,10 +53,10 @@ for att_v in att_vol:           #measure y-factor
     logger.start(file_name)
     time.sleep(10)
     logger.stop()
-    trx = plot_tool.yfactor_cal(file_name, thot, tcold)
-    print("Trx = %s"%(trx))
-    att_v_array.append(att_v)
-    trxarray.append(trx)
+    #trx = plot_tool.yfactor_cal(file_name, thot, tcold)
+    #print("Trx = %s"%(trx))
+    #att_v_array.append(att_v)
+    #trxarray.append(trx)
     continue
 
 #plot_tool.att_level_yfactor_plot(att_v_array, trxarray, args.save_name)
@@ -69,5 +69,5 @@ print("please wait 60s")
 time.sleep(60)
 print('setting finished')
 
-print(str(trxarray))
-print(str(att_v_array))
+#print(str(trxarray))
+#print(str(att_v_array))

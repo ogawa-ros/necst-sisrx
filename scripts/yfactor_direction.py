@@ -25,8 +25,8 @@ parser.add_argument('save_name', type = str, help = 'set saving file name')
 
 args = parser.parse_args()
 
-thot = float(input("thot[K]:"))
-tcold = float(input("tcold[K]:"))
+#thot = float(input("thot[K]:"))
+#tcold = float(input("tcold[K]:"))
 
 date = datetime.datetime.today().strftime('%Y%m%d')
 file_name = '/home/hinotoritz/data/evaluation/' + data + '/%s'%(args.save_name)
@@ -34,9 +34,9 @@ logger.start(file_name)
 time.sleep(10)
 logger.stop()
 
-trx = plot_tool.yfactor_plot(file_name, args.save_name, thot, tcold)
-numpy.save(
-'/home/hinotoritz/data/evaluation/' + date + '/'+str(args.save_name)+'/trx_data',
-trx
-)
-print(str(trx))
+#trx = plot_tool.yfactor_plot(file_name, args.save_name, thot, tcold)
+#numpy.save(
+#'/home/hinotoritz/data/evaluation/' + date + '/'+str(args.save_name)+'/trx_data',
+#trx
+#)
+#print(str(trx))

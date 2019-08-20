@@ -26,8 +26,8 @@ parser = argparse.ArgumentParser(description = 'search optical sis voltage value
 parser.add_argument('save_name', type = str, help = 'set saving file name')
 parser.add_argument('polarization', choices = ['V', 'H'], help = 'choice polarization V or H')
 
-thot = float(input("thot[K]:"))
-tcold = float(input("tcold[K]:"))
+#thot = float(input("thot[K]:"))
+#tcold = float(input("tcold[K]:"))
 
 args = parser.parse_args()
 
@@ -56,9 +56,9 @@ for vp1 in volp1:             #measure y-factor
         logger.start(file_name)
         time.sleep(10)
         logger.stop()
-        trx = plot_tool.yfactor_cal(file_name, thot, tcold)
-        print('Trx = ' + str(trx))
-        print('--------------------')
+        #trx = plot_tool.yfactor_cal(file_name, thot, tcold)
+        #print('Trx = ' + str(trx))
+        #print('--------------------')
         sis_v = plot_tool.sis_vol_average(file_name)
 
         if args.polarization == 'V':
@@ -68,7 +68,7 @@ for vp1 in volp1:             #measure y-factor
             v1 = sis_v[1]
             v2 = sis_v[2]
 
-        trxarray.append(trx)
+        #trxarray.append(trx)
         #print("Trxarray = " + str(trxarray))
         v1array.append(v1)
         v2array.append(v2)
@@ -78,13 +78,13 @@ for vp1 in volp1:             #measure y-factor
     continue
 
 #plot_tool.sis_bias_and_yfactor_matrix_plot(v1array, v2array, trxarray, args.save_name)
-trxarray = numpy.reshape(trxarray, (5,5))
-v1array = numpy.reshape(v1array, (5,5))
-v2array = numpy.reshape(v2array, (5,5))
-print('v1 = ')
-print(str(v1array))
-print('v2 = ')
-print(str(v2array))
-print('trx or tsys = ')
-print( str(trxarray))
+#trxarray = numpy.reshape(trxarray, (5,5))
+#v1array = numpy.reshape(v1array, (5,5))
+#v2array = numpy.reshape(v2array, (5,5))
+#print('v1 = ')
+#print(str(v1array))
+#print('v2 = ')
+#print(str(v2array))
+#print('trx or tsys = ')
+#print( str(trxarray))
 sis.set_vgap(0)
