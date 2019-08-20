@@ -34,7 +34,7 @@ args = parser.parse_args()
 volp1 = np.linspace(-2, 0, 5)   #search optimal SIS voltage value
 volp2 = np.linspace(-2, 0, 5)
 
-trxarray = []
+#trxarray = []
 v1array = []
 v2array = []
 
