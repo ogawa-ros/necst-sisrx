@@ -44,7 +44,7 @@ for vp1 in volp1:             #measure y-factor
         sis_v = []
 
         save = '%s/vp1=%s_vp2=%s_%s-pol'%(args.save_name, str(vp1), str(vp2), args.polarization)
-        date = datetime.datetime.today().strftime('%Y%m%d')
+        date = datetime.datetime.today().strftime('%Y%m%d_%H/%M/%S')
         file_name = '/home/hinotoritz/data/evaluation/' + date + '/'+ save
         print('--------------------')
         print(file_name)

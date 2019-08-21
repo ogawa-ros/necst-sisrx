@@ -28,7 +28,7 @@ args = parser.parse_args()
 #thot = float(input("thot[K]:"))
 #tcold = float(input("tcold[K]:"))
 
-date = datetime.datetime.today().strftime('%Y%m%d')
+date = datetime.datetime.today().strftime('%Y%m%d_%H/%M/%S')
 file_name = '/home/hinotoritz/data/evaluation/' + data + '/%s'%(args.save_name)
 logger.start(file_name)
 time.sleep(10)
