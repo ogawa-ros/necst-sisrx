@@ -8,7 +8,7 @@ import time
 import std_msgs.msg
 import argparse
 
-sys.path.append("/home/exito/ros/src/necst-tz2019/scripts")
+sys.path.append("/home/hinotoritz/ros/src/necst-tz2019/scripts")
 
 import tz2019_controller
 

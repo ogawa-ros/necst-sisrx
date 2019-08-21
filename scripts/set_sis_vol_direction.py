@@ -8,11 +8,11 @@ import sys
 import std_msgs.msg
 import argparse
 
-sys.path.append("/home/exito/ros/src/necst-tz2019/scripts")
+sys.path.append("/home/hinotoritz/ros/src/necst-tz2019/scripts")
 
 import tz2019_controller
 
-sys.path.append("/home/exito/ros/src/necst-core/scripts")
+sys.path.append("/home/hinotoritz/ros/src/necst-core/scripts")
 
 import controller
 import core_controller
