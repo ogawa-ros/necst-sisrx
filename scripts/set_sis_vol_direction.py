@@ -25,7 +25,7 @@ sis = tz2019_controller.sis()
 
 parser = argparse.ArgumentParser(description = 'set SIS voltage V1 and V2')
 
-parser.add_argument('save_name', type = str, help = 'set saving file name')
+#parser.add_argument('save_name', type = str, help = 'set saving file name')
 parser.add_argument('v1', type = float, help = 'set SIS voltage of V1')
 parser.add_argument('h1', type = float, help = 'set SIS voltage of V2')
 parser.add_argument('h2', type = float, help = 'set SIS voltage of V1')
