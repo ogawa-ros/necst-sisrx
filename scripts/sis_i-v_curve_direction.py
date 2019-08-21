@@ -23,14 +23,12 @@ rospy.init_node(name)
 sis = controller.sis()
 logger = core_controller.logger()
 
-parser = argparse.ArgumentParser(description = 'measure SIS I-V curve only')
+#parser = argparse.ArgumentParser(description = 'measure SIS I-V curve only')
+#parser.add_argument('save_name', type = str, help = 'set saving file name')
+#args = parser.parse_args()
 
-parser.add_argument('save_name', type = str, help = 'set saving file name')
-
-args = parser.parse_args()
-
-date = datetime.datetime.today().strftime('%Y%m%d')
-file_name = '/home/hinotoritz/data/evaluation/' + date +'/sis_iv/%s'%(args.save_name)
+date = datetime.datetime.today().strftime('%Y%m%d_%H/%M/%S')
+file_name = '/home/hinotoritz/data/operation/sis_iv' + date +'.necstdb'
 print(file_name)
 logger.start(file_name)
 sis_vgap = numpy.arange(0, 1.2, 0.001)
