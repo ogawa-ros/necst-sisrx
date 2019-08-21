@@ -38,8 +38,9 @@ sis.set_h1_v(args.h1)
 sis.set_h2_v(args.h2)
 sis.set_v2_v(args.v2)
 
-file_name = '/home/exito/data/logger/test/%s_iv.db'%(args.save_name)
-logger.start(file_name)
-time.sleep(10)
-logger.stop()
+#date = datetime.datetime.today().strftime('%Y%m%d_%H/%M/%S')
+#file_name = '/home/hinotoritz/data/' + name + '/' + date + '.necstdb
+#logger.start(file_name)
+#time.sleep(10)
+#logger.stop()
 #plot_tool.iv_plot(file_name, args.save_name)
