@@ -19,17 +19,15 @@ rospy.init_node(name)
 
 logger = core_controller.logger()
 
-parser = argparse.ArgumentParser(description = 'measure Y-factor only')
-
-parser.add_argument('save_name', type = str, help = 'set saving file name')
-
-args = parser.parse_args()
+#parser = argparse.ArgumentParser(description = 'measure Y-factor only')
+#parser.add_argument('save_name', type = str, help = 'set saving file name')
+#args = parser.parse_args()
 
 #thot = float(input("thot[K]:"))
 #tcold = float(input("tcold[K]:"))
 
 date = datetime.datetime.today().strftime('%Y%m%d_%H/%M/%S')
-file_name = '/home/hinotoritz/data/' + name + '/' + data 
+file_name = '/home/hinotoritz/data/' + name + '/' + data
 logger.start(file_name)
 time.sleep(10)
 logger.stop()
