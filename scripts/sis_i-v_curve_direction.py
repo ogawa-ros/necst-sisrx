@@ -36,7 +36,10 @@ for vgap in sis_vgap:
     sis.set_vgap(vgap)
     time.sleep(0.1)
     continue
-sis.set_vgap(0)
+
 logger.stop()
+time.sleep(3)
+sis.set_vgap(0)
+
 
 #plot_tool.iv_plot(file_name, args.save_name)
