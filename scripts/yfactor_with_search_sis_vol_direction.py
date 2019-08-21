@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-name = 'measure_yfactor_search_sis_vol_direction'
+name = 'yfactor_search_sis_vol_direction'
 
 import sys
 import rospy
@@ -23,7 +23,7 @@ logger = core_controller.logger()
 
 parser = argparse.ArgumentParser(description = 'search optical sis voltage value')
 
-parser.add_argument('save_name', type = str, help = 'set saving file name')
+#parser.add_argument('save_name', type = str, help = 'set saving file name')
 parser.add_argument('polarization', choices = ['V', 'H'], help = 'choice polarization V or H')
 
 #thot = float(input("thot[K]:"))
@@ -43,9 +43,9 @@ for vp1 in volp1:             #measure y-factor
     for vp2 in volp2:
         sis_v = []
 
-        save = '%s/vp1=%s_vp2=%s_%s-pol'%(args.save_name, str(vp1), str(vp2), args.polarization)
+        save = '%vp1=%s_vp2=%s_%s-pol'%(str(vp1), str(vp2), args.polarization)
         date = datetime.datetime.today().strftime('%Y%m%d_%H/%M/%S')
-        file_name = '/home/hinotoritz/data/evaluation/' + date + '/'+ save
+        file_name = '/home/hinotoritz/data/' + name + '/' + date + save + '.necstdb'
         print('--------------------')
         print(file_name)
 

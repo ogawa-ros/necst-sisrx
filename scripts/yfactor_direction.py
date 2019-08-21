@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-name = 'measure_yfactor_direction'
+name = 'yfactor_direction'
 
 import sys
 import rospy
@@ -29,7 +29,7 @@ args = parser.parse_args()
 #tcold = float(input("tcold[K]:"))
 
 date = datetime.datetime.today().strftime('%Y%m%d_%H/%M/%S')
-file_name = '/home/hinotoritz/data/evaluation/' + data + '/%s'%(args.save_name)
+file_name = '/home/hinotoritz/data/' + name + '/' + data 
 logger.start(file_name)
 time.sleep(10)
 logger.stop()
