@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-name = 'sis_i_v_curve_direction'
+name = 'sis_iv_curve_direction'
 
 import sys
 import datetime
