@@ -14,8 +14,8 @@ sys.path.append("/home/hinotoritz/ros/src/necst-core/scripts")
 import controller
 import core_controller
 
-sys.path.append("/home/hinotoritz/ros/src/necst-tz2019/scripts")
-import plot_tool
+#sys.path.append("/home/hinotoritz/ros/src/necst-tz2019/scripts")
+#import plot_tool
 
 
 rospy.init_node(name)
