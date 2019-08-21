@@ -39,7 +39,7 @@ att = att[::-1]          #search Lo Att level when Parameter Search
 date = datetime.datetime.today().strftime('%Y%m%d_%H/%M/%S')
 
 for att_vol in att:
-    file_name = '/home/hinotoritz/data/operation/' + name + '/' + date + '_attlevel=%s.necstdb'%(att_vol)
+    file_name = name + '/' + date + '_attlevel=%s.necstdb'%(att_vol)
     print(file_name)
     print('Please wait. seting att_level now!!' )
     logger.start(file_name)             #measure I-V curve

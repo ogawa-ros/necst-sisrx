@@ -40,7 +40,7 @@ att_v_array = []
 trxarray = []
 for att_v in att_vol:           #measure y-factor
     date = datetime.datetime.today().strftime('%Y%m%d_%H/%M/%S')
-    file_name = '/home/hinotoritz/data/operation/'+ name + '/' + date + 'attlevel=%s.necstdb'%(str(att_v))
+    file_name = name + '/' + date + 'attlevel=%s.necstdb'%(str(att_v))
     save = '%s/attlevel = %s_data'%(args.save_name, str(att_v))
     print("setting att......please wait 60s")
 
