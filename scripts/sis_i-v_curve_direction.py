@@ -31,7 +31,7 @@ date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
 file_name = name + '/' + date + '.necstdb'
 print(file_name)
 logger.start(file_name)
-sis_vgap = numpy.arange(0, 1.2, 0.01)
+sis_vgap = numpy.arange(0, 1.2, 0.001)
 for vgap in sis_vgap:
     sis.set_vgap(vgap)
     time.sleep(0.1)
