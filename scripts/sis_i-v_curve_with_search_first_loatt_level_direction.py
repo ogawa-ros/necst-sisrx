@@ -27,11 +27,9 @@ loatt1 = tz2019_controller.loatt_h()
 loatt2 = tz2019_controller.loatt_v()
 logger = core_controller.logger()
 
-parser = argparse.ArgumentParser(description = 'search Lo Att level when paramater search and measure SIS I-V curve')
-
-parser.add_argument('save_name', type = str, help = 'set saving file name')
-
-args = parser.parse_args()
+#parser = argparse.ArgumentParser(description = 'search Lo Att level when paramater search and measure SIS I-V curve')
+#parser.add_argument('save_name', type = str, help = 'set saving file name')
+#args = parser.parse_args()
 
 
 #att = numpy.arange(15, 31, 5)
@@ -39,8 +37,8 @@ att = [17, 20, 25, 30]
 att = att[::-1]          #search Lo Att level when Parameter Search
 
 for att_vol in att:
-    date = datetime.datetime.today().strftime('%Y%m%d')
-    file_name = '/home/hinotoritz/data/evaluation/' + date +' /%s/att_level=%d_data'%(args.save_name, att_vol)
+    date = datetime.datetime.today().strftime('%Y%m%d_%H/%M/%S')
+    file_name = '/home/hinotoritz/data/operation/photon_assisted_step_att_level=%s/'%(att_vol) + date + '/.necstdb'
     print(file_name)
     print('Please wait. seting att_level now!!' )
     logger.start(file_name)             #measure I-V curve
