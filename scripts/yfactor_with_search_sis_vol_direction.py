@@ -62,17 +62,17 @@ for vp1 in volp1:             #measure y-factor
         #print('--------------------')
         #sis_v = plot_tool.sis_vol_average(file_name)
 
-        if args.polarization == 'V':
-            v1 = sis_v[0]
-            v2 = sis_v[3]
-        if args.polarization == 'H':
-            v1 = sis_v[1]
-            v2 = sis_v[2]
+        #if args.polarization == 'V':
+        #    v1 = sis_v[0]
+        #    v2 = sis_v[3]
+        #if args.polarization == 'H':
+        #    v1 = sis_v[1]
+        #    v2 = sis_v[2]
 
         #trxarray.append(trx)
         #print("Trxarray = " + str(trxarray))
-        v1array.append(v1)
-        v2array.append(v2)
+        #v1array.append(v1)
+        #v2array.append(v2)
         #print("v1 = "+ str(v1array))
         #print("v2 = "+ str(v2array))
         continue
