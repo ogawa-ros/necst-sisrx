@@ -10,6 +10,7 @@ import numpy as np
 import argparse
 #import plot_tool
 import matplotlib.pyplot as plt
+import datetime
 
 sys.path.append("/home/hinotoritz/ros/src/necst-core/scripts")
 
@@ -43,7 +44,7 @@ for vp1 in volp1:             #measure y-factor
     for vp2 in volp2:
         sis_v = []
 
-        save = '%svp1=%s_vp2='%(str(vp1), str(vp2)) + args.polarization + '-pol' 
+        save = '%svp1=%s_vp2='%(str(vp1), str(vp2)) + args.polarization + '-pol'
         date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
         file_name = name + '/' + date + save + '.necstdb'
         print('--------------------')
