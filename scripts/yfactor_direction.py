@@ -8,6 +8,7 @@ import time
 import std_msgs.msg
 import argparse
 import numpy
+import datetime
 
 sys.path.append("/home/hinotoritz/ros/src/necst-core/scripts")
 import core_controller
