@@ -43,7 +43,7 @@ for vp1 in volp1:             #measure y-factor
     for vp2 in volp2:
         sis_v = []
 
-        save = '%svp1=%s_vp2=%s_%s-pol'%(str(vp1), str(vp2), args.polarization)
+        save = '%svp1=%s_vp2='%(str(vp1), str(vp2)) + args.polarization + '-pol' 
         date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
         file_name = name + '/' + date + save + '.necstdb'
         print('--------------------')
