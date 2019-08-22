@@ -6,7 +6,7 @@ import sys
 import rospy
 import time
 import std_msgs.msg
-import numpy
+import numpy as np
 import argparse
 #import plot_tool
 import matplotlib.pyplot as plt
