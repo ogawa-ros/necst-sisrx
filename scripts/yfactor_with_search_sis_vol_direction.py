@@ -24,7 +24,7 @@ logger = core_controller.logger()
 parser = argparse.ArgumentParser(description = 'search optical sis voltage value')
 
 #parser.add_argument('save_name', type = str, help = 'set saving file name')
-parser.add_argument('polarization', choices = ['V', 'H'], help = 'choice polarization V or H')
+parser.add_argument('polarization', type = str,  choices = ['V', 'H'], help = 'choice polarization V or H')
 
 #thot = float(input("thot[K]:"))
 #tcold = float(input("tcold[K]:"))
@@ -44,7 +44,7 @@ for vp1 in volp1:             #measure y-factor
         sis_v = []
 
         save = '%svp1=%s_vp2=%s_%s-pol'%(str(vp1), str(vp2), args.polarization)
-        date = datetime.datetime.today().strftime('%Y%m%d_%H/%M/%S')
+        date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
         file_name = name + '/' + date + save + '.necstdb'
         print('--------------------')
         print(file_name)
