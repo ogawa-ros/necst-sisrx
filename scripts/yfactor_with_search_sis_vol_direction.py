@@ -8,7 +8,7 @@ import time
 import std_msgs.msg
 import numpy as np
 import argparse
-import plot_tool
+#import plot_tool
 import matplotlib.pyplot as plt
 import datetime
 
@@ -60,7 +60,7 @@ for vp1 in volp1:             #measure y-factor
         #trx = plot_tool.yfactor_cal(file_name, thot, tcold)
         #print('Trx = ' + str(trx))
         #print('--------------------')
-        sis_v = plot_tool.sis_vol_average(file_name)
+        #sis_v = plot_tool.sis_vol_average(file_name)
 
         if args.polarization == 'V':
             v1 = sis_v[0]
