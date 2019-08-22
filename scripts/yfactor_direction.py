@@ -27,7 +27,7 @@ logger = core_controller.logger()
 #thot = float(input("thot[K]:"))
 #tcold = float(input("tcold[K]:"))
 
-date = datetime.datetime.today().strftime('%Y%m%d_%H/%M/%S')
+date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
 file_name = name + '/' + date + '.necstdb'
 logger.start(file_name)
 time.sleep(10)
