@@ -33,8 +33,13 @@ parser.add_argument('polarization', type = str,  choices = ['V', 'H'], help = 'c
 
 args = parser.parse_args()
 
-volp1 = np.linspace(-2, 0, 5)   #search optimal SIS voltage value
-volp2 = np.linspace(-2, 0, 5)
+if args.polarization == 'V':
+    volp1 = np.linspace(-1.5, 0, 10)   #search optimal SIS voltage value
+    volp2 = np.linspace(-1.5, 0, 10)
+
+if args.polarization == 'H':
+    volp1 = np.linspace(-2, -0.5, 10)   #search optimal SIS voltage value
+    volp2 = np.linspace(-2, -0.5, 10)
 
 #trxarray = []
 #v1array = []
@@ -46,7 +51,7 @@ for vp1 in volp1:             #measure y-factor
     for vp2 in volp2:
         sis_v = []
 
-        save = 'vp1=%s_vp2=%s'%(str(vp1), str(vp2)) + args.polarization + '-pol'
+        save = 'vp1=%s_vp2=%s_'%(str(vp1), str(vp2)) + args.polarization + '-pol'
         file_name = name + '/' + date + '/' + save + '.necstdb'
         print('--------------------')
         print(file_name)
@@ -73,10 +78,6 @@ for vp1 in volp1:             #measure y-factor
         #trxarray.append(trx)
         #v1array.append(v1)
         #v2array.append(v2)
-
-        #numpy.savetxt(trxarray.txt, trxarray)
-        #numpy.savetxt(v1array.txt, v1array)
-        #numpy.savetxt(v2array.txt, v2array)
 
         continue
     continue
