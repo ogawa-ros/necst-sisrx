@@ -46,13 +46,15 @@ if args.polarization == 'H':
 #v2array = []
 date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
 
+count = 0
 for vp1 in volp1:             #measure y-factor
     sis.set_vp1(vp1)
     for vp2 in volp2:
+        count+=1
         sis_v = []
 
         save = 'vp1=%s_vp2=%s_'%(str(vp1), str(vp2)) + args.polarization + '-pol'
-        file_name = name + '/' + date + '/' + save + '.necstdb'
+        file_name = name + '/' + date + '/' + '{0:03d}'.format(count) + '.necstdb'
         print('--------------------')
         print(file_name)
 
