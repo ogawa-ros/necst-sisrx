@@ -33,13 +33,10 @@ parser.add_argument('polarization', type = str,  choices = ['V', 'H'], help = 'c
 
 args = parser.parse_args()
 
-if args.polarization == 'V':
-    volp1 = np.linspace(-1.5, 0, 10)   #search optimal SIS voltage value
-    volp2 = np.linspace(-1.5, 0, 10)
+    volp1 = np.linspace(-2, 0, 20)   #search optimal SIS voltage value
+    volp2 = np.linspace(-2, 0, 20)
 
-if args.polarization == 'H':
-    volp1 = np.linspace(-2, -0.5, 10)   #search optimal SIS voltage value
-    volp2 = np.linspace(-2, -0.5, 10)
+
 
 #trxarray = []
 #v1array = []
