@@ -56,7 +56,7 @@ for vp1 in volp1:             #measure y-factor
         time.sleep(2)
 
         logger.start(file_name)
-        time.sleep(10)
+        time.sleep(5)
         logger.stop()
         #trx = plot_tool.yfactor_cal(file_name, thot, tcold)
         #print('Trx = ' + str(trx))
