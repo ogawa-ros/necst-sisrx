@@ -92,7 +92,7 @@ def sis_vol_average(file_name):
     import numpy
     import necstdb
     import pandas
-    %matplotlib inline
+    #%matplotlib inline
     import pathlib
     import pandas
     import matplotlib.pyplot
