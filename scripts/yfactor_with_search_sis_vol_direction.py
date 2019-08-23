@@ -16,6 +16,7 @@ sys.path.append("/home/hinotoritz/ros/src/necst-core/scripts")
 
 import controller
 import core_controller
+import plot_tool
 
 rospy.init_node(name)
 
@@ -36,8 +37,9 @@ volp1 = np.linspace(-2, 0, 5)   #search optimal SIS voltage value
 volp2 = np.linspace(-2, 0, 5)
 
 #trxarray = []
-v1array = []
-v2array = []
+#v1array = []
+#v2array = []
+date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
 
 for vp1 in volp1:             #measure y-factor
     sis.set_vp1(vp1)
@@ -45,8 +47,7 @@ for vp1 in volp1:             #measure y-factor
         sis_v = []
 
         save = 'vp1=%s_vp2=%s'%(str(vp1), str(vp2)) + args.polarization + '-pol'
-        date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
-        file_name = name + '/' + date + save + '.necstdb'
+        file_name = name + '/' + date + '/' + save + '.necstdb'
         print('--------------------')
         print(file_name)
 
@@ -70,22 +71,15 @@ for vp1 in volp1:             #measure y-factor
         #    v2 = sis_v[2]
 
         #trxarray.append(trx)
-        #print("Trxarray = " + str(trxarray))
         #v1array.append(v1)
         #v2array.append(v2)
-        #print("v1 = "+ str(v1array))
-        #print("v2 = "+ str(v2array))
+
+        #numpy.savetxt(trxarray.txt, trxarray)
+        #numpy.savetxt(v1array.txt, v1array)
+        #numpy.savetxt(v2array.txt, v2array)
+
         continue
     continue
 
-#plot_tool.sis_bias_and_yfactor_matrix_plot(v1array, v2array, trxarray, args.save_name)
-#trxarray = numpy.reshape(trxarray, (5,5))
-#v1array = numpy.reshape(v1array, (5,5))
-#v2array = numpy.reshape(v2array, (5,5))
-#print('v1 = ')
-#print(str(v1array))
-#print('v2 = ')
-#print(str(v2array))
-#print('trx or tsys = ')
-#print( str(trxarray))
+
 sis.set_vgap(0)
