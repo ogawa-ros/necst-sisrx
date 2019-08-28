@@ -27,19 +27,23 @@ logger = core_controller.logger()
 #parser.add_argument('save_name', type = str, help = 'set saving file name')
 #args = parser.parse_args()
 
+#日時を取得しデータの保存先を指定
 date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
 file_name = name + '/' + date + '.necstdb'
 print(file_name)
+
+#記録を開始
 logger.start(file_name)
+
+#sisの電圧を振る
 sis_vgap = numpy.arange(0, 1.2, 0.001)
 for vgap in sis_vgap:
     sis.set_vgap(vgap)
     time.sleep(0.1)
     continue
 
+#記録を終了
 logger.stop()
-time.sleep(3)
+
+#sisの電圧を0に戻し終了
 sis.set_vgap(0)
-
-
-#plot_tool.iv_plot(file_name, args.save_name)

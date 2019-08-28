@@ -31,13 +31,17 @@ logger = core_controller.logger()
 #parser.add_argument('save_name', type = str, help = 'set saving file name')
 #args = parser.parse_args()
 
+#サーチするatt.のレベルのスタート、ストップ、間隔を入力
+att_s = float(input('att_start:'))
+att_f = float(input('att_finish:'))
+att_i = float(input('att_interval:'))
+att = numpy.linspace(att_s, att_f, att_i)
 
-#att = numpy.arange(15, 31, 5)
-att = [17, 20, 25, 30]
-att = att[::-1]          #search Lo Att level when Parameter Search
 
-date = datetime.datetime.today().strftime('%Y%m%d_%H/%M/%S')
 
+date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
+
+#attのレベルを変えつつsisのivを測定する
 for att_vol in att:
     file_name = name + '/' + date + '_attlevel=%s.necstdb'%(att_vol)
     print(file_name)
@@ -55,11 +59,11 @@ for att_vol in att:
     #time.sleep(60)
     logger.stop()
     sis.set_vgap(0)
-    #plot_tool.att_iv_plot(file_name, args.save_name, att_vol)
     print('I-V masurement finished')
 
     continue
 
+#sisの電圧を0にしてattのレベルを30にして終了
 sis.set_vgap(0)
 loatt1.set_cur(30)
 print('please wait 120s')

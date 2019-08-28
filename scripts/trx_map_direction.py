@@ -9,7 +9,6 @@ import time
 import std_msgs.msg
 import numpy
 import argparse
-#import plot_tool
 import matplotlib.pyplot as plt
 import datetime
 
@@ -48,7 +47,6 @@ if pol == 'H':
     h2_s = float(input('h2_start:'))
     h2_f = float(input('h2_finish:'))
     h2_i = float(input('h2_interval:'))
-    v2_i = float(input('v2_interval:'))
     sis2 = numpy.linspace(h2_s, h2_f, h2_i)
 
 
@@ -57,7 +55,7 @@ date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
 
 #sisに電圧を振る
 count = 0
-for s1 in sis1:             #measure y-factor
+for s1 in sis1:
     sis.set_v1_v(s1)
     sis.set_h1_v(s1)
     for s2 in sis2:
