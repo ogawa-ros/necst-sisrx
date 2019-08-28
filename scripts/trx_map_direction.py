@@ -30,24 +30,24 @@ pol = str(input('polarization[V or H]:'))
 if pol == 'V':
     v1_s = float(input('v1_start:'))
     v1_f = float(input('v1_finish:'))
-    v1_i = float(input('v1_interval:'))
-    sis1 = numpy.linspace(v1_s, v1_f, v1_i)
+    v1_i = float(input('v1_num:'))
+    sis1 = numpy.linspace(v1_s, v1_f, v1_n)
 
     v2_s = float(input('v2_start:'))
     v2_f = float(input('v2_finish:'))
-    v2_i = float(input('v2_interval:'))
-    sis2 = numpy.linspace(v2_s, v2_f, v2_i)
+    v2_i = float(input('v2_num:'))
+    sis2 = numpy.linspace(v2_s, v2_f, v2_n)
 
 if pol == 'H':
     h1_s = float(input('h1_start:'))
     h1_f = float(input('h1_finish:'))
-    h1_i = float(input('h1_interval:'))
-    sis1 = numpy.linspace(h1_s, h1_f, h1_i)
+    h1_i = float(input('h1_num:'))
+    sis1 = numpy.linspace(h1_s, h1_f, h1_n)
 
     h2_s = float(input('h2_start:'))
     h2_f = float(input('h2_finish:'))
-    h2_i = float(input('h2_interval:'))
-    sis2 = numpy.linspace(h2_s, h2_f, h2_i)
+    h2_i = float(input('h2_num:'))
+    sis2 = numpy.linspace(h2_s, h2_f, h2_n)
 
 
 #測定を開始した時間を取得
